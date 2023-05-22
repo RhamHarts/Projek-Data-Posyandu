@@ -1,0 +1,236 @@
+import React, { useState, useEffect } from "react";
+import { Text, View, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon1 from "react-native-vector-icons/MaterialIcons";
+import { useNavigation } from "@react-navigation/native";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+  firestore,
+  collection,
+  getDocs,
+} from "../components/ConfigFirebase/firebase";
+import { deleteDoc, doc } from "firebase/firestore";
+
+export default function Profile() {
+  const navigation = useNavigation();
+
+  const [userData, setUserData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, async (userAuth) => {
+      if (userAuth) {
+        try {
+          const usersCollection = collection(firestore, "users");
+          const usersSnapshot = await getDocs(usersCollection);
+          const usersList = usersSnapshot.docs.map((doc) => doc.data());
+          const currentUserData = usersList.find(
+            (user) => user.uid === userAuth.uid
+          );
+          setUserData(currentUserData);
+          setIsLoading(false);
+
+          console.log("User Data:", currentUserData); // Tampilkan data ke dalam console.log
+        } catch (error) {
+          console.log("Error fetching user data:", error);
+          setIsLoading(false);
+        }
+      } else {
+        setIsLoading(false);
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
+  const handleSignOut = async () => {
+    const auth = getAuth();
+
+    try {
+      const userDocRef = doc(firestore, "users", auth.currentUser.uid);
+
+      // Hapus data pengguna yang sudah login sebelumnya
+      await deleteDoc(userDocRef);
+
+      // Logout pengguna
+      await signOut(auth);
+      navigation.replace("LoginLanding");
+    } catch (error) {
+      console.log("Error signing out:", error);
+      alert(error.message);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <View>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
+  return (
+    <View>
+      <View
+        style={{
+          width: "100%",
+          height: 70,
+          alignItems: "center",
+          marginVertical: 15,
+          backgroundColor: "#FFFFFF",
+          elevation: 2,
+          marginTop: 40,
+        }}
+      >
+        <Text
+          style={{
+            alignItems: "center",
+            marginTop: 20,
+            fontSize: 20,
+            fontWeight: "bold",
+            marginRight: 300,
+          }}
+        >
+          {" "}
+          Profile{" "}
+        </Text>
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          width: "100%",
+          height: 100,
+          alignItems: "center",
+          marginVertical: 15,
+          backgroundColor: "#FFFFFF",
+          borderRadius: 10,
+          elevation: 2,
+          bottom: 40,
+        }}
+      >
+        <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
+          <Icon name="user-circle" size={50} color="#000000" />
+        </View>
+        <View>
+          <Text>{userData && userData.username}</Text>
+          <Text>{userData && userData.noHP}</Text>
+          <Text>{userData && userData.email}</Text>
+        </View>
+      </View>
+
+      <TouchableOpacity onPress={() => navigation.navigate("InformasiAkun")}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "#FFFFFF",
+            top: 40,
+            paddingHorizontal: 10,
+          }}
+        >
+          <View style={{ margin: 10, padding: 5, marginRight: 5 }}>
+            <Icon name="user" size={20} color="#499ff5" />
+          </View>
+          <View>
+            <Text style={{ fontWeight: "bold", color: "#499ff5", left: 10 }}>
+              Informasi Akun
+            </Text>
+          </View>
+          <View style={{ flex: 1, alignItems: "flex-end" }}>
+            <Icon1 name="navigate-next" size={20} color="#499ff5" />
+          </View>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity onPress={() => navigation.navigate("LoginLanding")}>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "#FFFFFF",
+            top: 40,
+            paddingHorizontal: 10,
+          }}
+        >
+          <View style={{ margin: 10, padding: 5, marginRight: 5 }}>
+            <Icon1 name="vpn-key" size={20} color="#499ff5" />
+          </View>
+          <View>
+            <Text style={{ fontWeight: "bold", color: "#499ff5", left: 10 }}>
+              Ubah Password
+            </Text>
+          </View>
+          <View style={{ flex: 1, alignItems: "flex-end" }}>
+            <Icon1 name="navigate-next" size={20} color="#499ff5" />
+          </View>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "#FFFFFF",
+            top: 40,
+            paddingHorizontal: 10,
+          }}
+        >
+          <View style={{ margin: 10, padding: 5, marginRight: 5 }}>
+            <Icon name="question-circle" size={20} color="#499ff5" />
+          </View>
+          <View>
+            <Text style={{ fontWeight: "bold", color: "#499ff5", left: 10 }}>
+              Pusat Bantuan
+            </Text>
+          </View>
+          <View style={{ flex: 1, alignItems: "flex-end" }}>
+            <Icon1 name="navigate-next" size={20} color="#499ff5" />
+          </View>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            backgroundColor: "#FFFFFF",
+            top: 40,
+            paddingHorizontal: 10,
+          }}
+        >
+          <View style={{ margin: 10, padding: 5, marginRight: 5 }}>
+            <Icon name="info-circle" size={20} color="#499ff5" />
+          </View>
+          <View>
+            <Text style={{ fontWeight: "bold", color: "#499ff5", left: 10 }}>
+              Tentang Aplikasi
+            </Text>
+          </View>
+          <View style={{ flex: 1, alignItems: "flex-end" }}>
+            <Icon1 name="navigate-next" size={20} color="#499ff5" />
+          </View>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={{
+          marginTop: 100,
+          backgroundColor: "#03a9f4",
+          paddingVertical: 15,
+          marginHorizontal: 20,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 9,
+          elevation: 2,
+        }}
+        onPress={handleSignOut}
+      >
+        <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
+          Keluar
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+}
