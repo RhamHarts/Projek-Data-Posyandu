@@ -23,7 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const auth = getAuth(app);
-const firestore = getFirestore(app);
+const firestore = getFirestore();
 
 async function getData() {
   const users = collection(firestore, "users");

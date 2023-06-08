@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1020006557957",
+    "firebase_url": "https://crud-react-native-8c646-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "crud-react-native-8c646",
+    "storage_bucket": "crud-react-native-8c646.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020006557957:android:d48ae558c74d250dea2f6c",
+        "android_client_info": {
+          "package_name": "com.projek.data.posyandu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020006557957-vlqsbvka92611fg30v6t8o5dhegr057q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlS80PrJO3RNZ8hiDKWFWRGEF-I5ghYRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020006557957-vlqsbvka92611fg30v6t8o5dhegr057q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
