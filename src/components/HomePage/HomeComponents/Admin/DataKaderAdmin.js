@@ -11,8 +11,10 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
 import { auth, firestore } from "../../../ConfigFirebase/firebase";
+import { useNavigation } from "@react-navigation/native";
 
 const DataKaderAdmin = () => {
+  const navigation = useNavigation();
   const [dataKader, setDataKader] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [newKaderName, setNewKaderName] = useState("");
@@ -21,13 +23,30 @@ const DataKaderAdmin = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const querySnapshot = await getDocs(collection(firestore, "DataKader"));
-        const data = querySnapshot.docs.map((doc) => doc.data());
-        setDataKader(data);
+        const currentUser = auth.currentUser;
+        if (currentUser) {
+          const usersRef = collection(firestore, "Admin");
+          const q = query(usersRef, where("email", "==", currentUser.email));
+
+          const querySnapshot = await getDocs(q);
+          const userDoc = querySnapshot.docs[0];
+          const alamatPosyandu = userDoc?.data()?.alamatPosyandu;
+
+          const kaderRef = collection(firestore, "DataKader");
+          const kaderQ = query(
+            kaderRef,
+            where("alamatPosyandu", "==", alamatPosyandu)
+          );
+
+          const kaderSnapshot = await getDocs(kaderQ);
+          const kaderData = kaderSnapshot.docs.map((doc) => doc.data());
+          setDataKader(kaderData);
+        }
       } catch (error) {
         console.log("Terjadi kesalahan saat mengambil data kader:", error);
       }
     };
+
     fetchData();
   }, []);
 
@@ -37,38 +56,34 @@ const DataKaderAdmin = () => {
       return;
     }
 
-    const currentUser = auth.currentUser;
-    if (currentUser) {
-      const usersRef = collection(firestore, "Admin");
-      const q = query(
-        usersRef,
-        where("email", "==", currentUser.email) // Menggunakan email sebagai kriteria pencarian
-      );
+    try {
+      const currentUser = auth.currentUser;
+      if (currentUser) {
+        const usersRef = collection(firestore, "Admin");
+        const q = query(usersRef, where("email", "==", currentUser.email));
 
-      try {
         const querySnapshot = await getDocs(q);
         const userDoc = querySnapshot.docs[0];
-        const alamatPosyandu = userDoc?.data()?.AlamatPosyandu;
+        const alamatPosyandu = userDoc?.data()?.alamatPosyandu;
         const email = userDoc?.data()?.email;
 
         const newDataKader = {
-          name: newKaderName,
-          position: newKaderPosition,
-          AlamatPosyandu: alamatPosyandu,
+          NamaKader: newKaderName,
+          PosisiKader: newKaderPosition,
+          alamatPosyandu: alamatPosyandu,
           email: email,
         };
 
         await addDoc(collection(firestore, "DataKader"), newDataKader);
 
-        // Mengupdate state dataKader setelah data berhasil disimpan
         setDataKader([...dataKader, newDataKader]);
 
         setIsModalVisible(false);
         clearInputFields();
         console.log("Data kader berhasil disimpan ke Firestore!");
-      } catch (error) {
-        console.log("Terjadi kesalahan saat menyimpan data kader:", error);
       }
+    } catch (error) {
+      console.log("Terjadi kesalahan saat menyimpan data kader:", error);
     }
   };
 
@@ -87,14 +102,25 @@ const DataKaderAdmin = () => {
         style={{
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 40,
+          marginTop: 20,
           padding: 10,
           backgroundColor: "#03a9f4",
           alignSelf: "stretch",
           borderBottomWidth: 1,
           borderBottomColor: "black",
+          zIndex: 1,
+          marginBottom: 20,
+          flexDirection: "row",
         }}
       >
+        <TouchableOpacity onPress={() => navigation.navigate("TabHomeAdmin")}>
+          <Icon
+            name="arrow-left"
+            size={25}
+            color="white"
+            style={{ marginLeft: -135 }}
+          />
+        </TouchableOpacity>
         <Text
           style={{
             fontSize: 20,
@@ -108,7 +134,6 @@ const DataKaderAdmin = () => {
       </View>
 
       <ScrollView>
-        {/* Render existing data kader or show message if data is empty */}
         {dataKader.length === 0 ? (
           <View style={{ alignItems: "center", marginTop: 50 }}>
             <Text style={{ fontSize: 20 }}>Belum ada data kader tersedia.</Text>
@@ -134,17 +159,16 @@ const DataKaderAdmin = () => {
               </View>
               <View style={{ flex: 1 }}>
                 <Text style={{ fontWeight: "bold", left: 5 }}>
-                  {kader.name}
+                  {kader.NamaKader}
                 </Text>
                 <View style={{ flexDirection: "row", alignItems: "center" }}>
-                  <Text style={{ marginLeft: 5 }}>{kader.position}</Text>
+                  <Text style={{ marginLeft: 5 }}>{kader.PosisiKader}</Text>
                 </View>
               </View>
             </View>
           ))
         )}
 
-        {/* Button to add new data kader */}
         <TouchableOpacity
           style={{
             width: 70,
@@ -161,7 +185,6 @@ const DataKaderAdmin = () => {
         </TouchableOpacity>
       </ScrollView>
 
-      {/* Modal for adding new data kader */}
       <Modal visible={isModalVisible} animationType="slide">
         <View style={{ flex: 1 }}>
           <View

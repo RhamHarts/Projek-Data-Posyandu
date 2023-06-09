@@ -48,19 +48,19 @@ const data = [
       },
       {
         text: "Perkembangan keterampilan motorik halus",
-        image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-2.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-2.png"),
         width: 100,
         height: 65,
       },
       {
         text: "Kemampuan bahasa yang lebih maju",
-        image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-3.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-3.png"),
         width: 100,
         height: 70,
       },
       {
         text: "Peningkatan dalam bermain bersama anak lain",
-        image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-4.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-4.png"),
         width: 110,
         height: 70,
       },

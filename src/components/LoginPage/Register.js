@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { collection, addDoc, query, getDocs } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
 import SignInHeader from "./Components/SignInHeader";
@@ -23,33 +23,15 @@ const Register = () => {
   const [noHP, setNoHP] = useState("");
   const [alamat, setAlamat] = useState("");
   const [alamatPosyandu, setAlamatPosyandu] = useState("");
-  const [alamatPosyanduOptions, setAlamatPosyanduOptions] = useState([
-    "Ciapus",
-    "Dramaga",
-  ]);
+  const [filteredAlamatPosyanduOptions, setFilteredAlamatPosyanduOptions] =
+    useState([]);
   const [showAlamatPosyanduOptions, setShowAlamatPosyanduOptions] =
     useState(false);
   const [selectedAlamatPosyandu, setSelectedAlamatPosyandu] = useState("");
 
   const navigation = useNavigation();
 
-  useEffect(() => {
-    fetchAlamatPosyanduOptions();
-  }, []);
-
-  const fetchAlamatPosyanduOptions = async () => {
-    try {
-      const q = query(collection(firestore, "alamatPosyandu")); // Replace "alamatPosyandu" with the actual collection name in your Firestore
-      const querySnapshot = await getDocs(q);
-      const options = querySnapshot.docs.map(
-        (doc) => doc.data().alamatPosyandu
-      );
-      setAlamatPosyanduOptions(options);
-    } catch (error) {
-      console.log("Error fetching alamat posyandu options:", error);
-    }
-  };
-
+  const alamatPosyanduOptions = ["Ciapus", "Dramaga"];
   const handleSignUp = async () => {
     try {
       // Create the user
@@ -72,13 +54,18 @@ const Register = () => {
         username,
         role: "users", // Tambahkan properti "role" dengan nilai "user"
         user_id: uid,
-        alamatPosyandu,
+        alamatPosyandu: selectedAlamatPosyandu, // Gunakan nilai yang dipilih
       };
 
       await addDoc(collection(firestore, "users"), userData);
     } catch (error) {
       alert(error.message);
     }
+  };
+
+  const handleSearch = (text) => {
+    setAlamatPosyandu(text);
+    setShowAlamatPosyanduOptions(true);
   };
 
   const handleSelectAlamatPosyandu = (option) => {

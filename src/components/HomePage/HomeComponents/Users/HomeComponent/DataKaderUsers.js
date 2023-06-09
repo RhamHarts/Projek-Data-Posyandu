@@ -2,16 +2,19 @@ import React, { useEffect, useState } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { useNavigation } from "@react-navigation/native";
-import { firestore } from "../../../../ConfigFirebase/firebase";
+import { firestore, auth } from "../../../../ConfigFirebase/firebase";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 export default function DataKaderUser() {
   const navigation = useNavigation();
   const [kaderData, setKaderData] = useState([]);
+  const [userAlamatPosyandu, setUserAlamatPosyandu] = useState("");
 
   useEffect(() => {
     const fetchKaderData = async () => {
       try {
-        const snapshot = await firestore().collection("DataKader").get();
+        const dataKaderRef = collection(firestore, "DataKader");
+        const snapshot = await getDocs(dataKaderRef);
         const kaderList = snapshot.docs.map((doc) => doc.data());
         setKaderData(kaderList);
       } catch (error) {
@@ -22,9 +25,38 @@ export default function DataKaderUser() {
     fetchKaderData();
   }, []);
 
-  // Filter data Kader dengan alamatPosyandu Dramaga
+  useEffect(() => {
+    const fetchUserAlamatPosyandu = async () => {
+      try {
+        const currentUser = auth.currentUser;
+        if (currentUser) {
+          const usersRef = collection(firestore, "users");
+          const q = query(
+            usersRef,
+            where("email", "==", currentUser.email) // Menggunakan email sebagai kriteria pencarian
+          );
+
+          const querySnapshot = await getDocs(q);
+          if (!querySnapshot.empty) {
+            querySnapshot.forEach((doc) => {
+              const alamatPosyandu = doc.data().alamatPosyandu;
+              setUserAlamatPosyandu(alamatPosyandu);
+            });
+          } else {
+            console.log("Data pengguna tidak ditemukan");
+          }
+        }
+      } catch (error) {
+        console.log("Error: ", error);
+      }
+    };
+
+    fetchUserAlamatPosyandu();
+  }, []);
+
+  // Filter data Kader dengan alamatPosyandu yang sesuai dengan userAlamatPosyandu
   const filteredData = kaderData.filter(
-    (kader) => kader.alamatPosyandu === "Dramaga"
+    (kader) => kader.alamatPosyandu === userAlamatPosyandu
   );
 
   return (
@@ -64,34 +96,44 @@ export default function DataKaderUser() {
         </Text>
       </View>
 
-      {filteredData.map((kader, index) => (
-        <View
-          key={index}
-          style={{
-            flexDirection: "row",
-            width: "100%",
-            height: 100,
-            alignItems: "center",
-            marginVertical: 15,
-            backgroundColor: "#FFFFFF",
-            borderRadius: 10,
-            elevation: 6,
-            bottom: 40,
-          }}
-        >
-          <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
-            <Icon name="user-circle" size={50} color="#000000" />
-          </View>
-          <View>
-            <Text style={{ fontWeight: "bold", left: 5 }}>{kader.nama}</Text>
-            <View
-              style={{ flexDirection: "row", alignItems: "center", margin: 5 }}
-            >
-              <Text style={{}}>{kader.posisi}</Text>
+      {filteredData.length > 0 ? (
+        filteredData.map((kader, index) => (
+          <View
+            key={index}
+            style={{
+              flexDirection: "row",
+              width: "100%",
+              height: 100,
+              alignItems: "center",
+              marginVertical: 15,
+              backgroundColor: "#FFFFFF",
+              borderRadius: 10,
+              elevation: 6,
+              bottom: 40,
+            }}
+          >
+            <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
+              <Icon name="user-circle" size={50} color="#000000" />
+            </View>
+            <View>
+              <Text style={{ fontWeight: "bold", left: 5 }}>
+                {kader.NamaKader}
+              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  margin: 5,
+                }}
+              >
+                <Text style={{}}>{kader.PosisiKader}</Text>
+              </View>
             </View>
           </View>
-        </View>
-      ))}
+        ))
+      ) : (
+        <Text>Data kader tidak ditemukan</Text>
+      )}
     </View>
   );
 }

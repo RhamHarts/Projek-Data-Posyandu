@@ -7,31 +7,31 @@ const data = [
     needs: [
       {
         text: "Pengembangan kecerdasan emosional",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-1.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-1.png"),
         width: 100,
         height: 80,
       },
       {
         text: "Peningkatan keterampilan bermain sosial",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-2.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-2.png"),
         width: 90,
         height: 70,
       },
       {
         text: "Pengembangan kemampuan mengatur diri",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-3.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-3.png"),
         width: 60,
         height: 80,
       },
       {
         text: "Stimulasi kreativitas dan imajinasi",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-4.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-4.png"),
         width: 100,
         height: 80,
       },
       {
         text: "Peningkatan kemandirian dalam tugas sehari-hari",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-5.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/37-42-5.png"),
         width: 110,
         height: 80,
       },
@@ -42,7 +42,7 @@ const data = [
     needs: [
       {
         text: "Peningkatan pemahaman tentang aturan dan etika",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-1.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-1.png"),
         width: 90,
         height: 50,
       },
@@ -54,19 +54,19 @@ const data = [
       },
       {
         text: "Stimulasi perkembangan logika dan penalaran",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-3.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-3.png"),
         width: 100,
         height: 70,
       },
       {
         text: "Pengembangan keterampilan memecahkan masalah",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-4.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-4.png"),
         width: 110,
         height: 70,
       },
       {
         text: "Peningkatan kemampuan beradaptasi dengan lingkungan sosial",
-        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-5.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/37-48/43-48-5.png"),
         width: 110,
         height: 60,
       },

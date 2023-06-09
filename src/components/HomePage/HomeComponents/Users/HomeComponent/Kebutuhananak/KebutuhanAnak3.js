@@ -12,13 +12,13 @@ const data = [
       },
       {
         text: "Perkembangan motorik yang lebih kompleks",
-        image: require("../../../../../../images/Kebutuhanchildren/25-36/25-30-2.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/25-36/25-30-2.png"),
         width: 100,
         height: 70,
       },
       {
         text: "Peningkatan kemampuan bahasa dan komunikasi",
-        image: require("../../../../../../images/Kebutuhanchildren/25-36/25-30-3.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/25-36/25-30-3.png"),
         width: 70,
         height: 90,
       },
@@ -59,7 +59,7 @@ const data = [
       },
       {
         text: "Bermain dengan aturan dan bekerja sama dengan anak lain",
-        image: require("../../../../../../images/Kebutuhanchildren/25-36/31-36-4.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/25-36/31-36-4.png"),
         width: 110,
         height: 70,
       },

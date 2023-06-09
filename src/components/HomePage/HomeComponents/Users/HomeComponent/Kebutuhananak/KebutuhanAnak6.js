@@ -7,31 +7,31 @@ const data = [
     needs: [
       {
         text: "Pengembangan keterampilan berpikir kritis",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-1.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-1.png"),
         width: 100,
         height: 65,
       },
       {
         text: "Peningkatan kemampuan membaca dan menulis",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-2.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-2.png"),
         width: 90,
         height: 50,
       },
       {
         text: "Stimulasi kreativitas dalam seni dan musik",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-3.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-3.png"),
         width: 60,
         height: 70,
       },
       {
         text: "Pengembangan keterampilan matematika dasar",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-4.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-4.png"),
         width: 100,
         height: 80,
       },
       {
         text: "Peningkatan pemahaman tentang lingkungan dan alam",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-5.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/49-54-5.png"),
         width: 110,
         height: 80,
       },
@@ -42,31 +42,31 @@ const data = [
     needs: [
       {
         text: "Pengembangan keterampilan kerja sama dan tim",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-1.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-1.png"),
         width: 90,
         height: 50,
       },
       {
         text: "Peningkatan kemandirian dalam tugas sehari-hari",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-2.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-2.png"),
         width: 100,
         height: 50,
       },
       {
         text: "Stimulasi pemikiran abstrak dan logika",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-3.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-3.png"),
         width: 100,
         height: 70,
       },
       {
         text: "Pengembangan keterampilan teknologi informasi",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-4.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-4.png"),
         width: 110,
         height: 70,
       },
       {
         text: "Peningkatan pemahaman sosial",
-        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-5.PNG"),
+        image: require("../../../../../../images/Kebutuhanchildren/49-60/55-60-5.png"),
         width: 110,
         height: 60,
       },

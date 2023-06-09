@@ -72,7 +72,7 @@ export default function KebutuhanAnak() {
               flexDirection: "row",
               marginBottom: 10,
             }}
-            onPress={"KebutuhanAnak1"}
+            onPress={() => navigation.navigate("KebutuhanAnak1")}
           >
             <View
               style={{
@@ -114,7 +114,7 @@ export default function KebutuhanAnak() {
               flexDirection: "row",
               marginBottom: 10,
             }}
-            onPress={"KebutuhanAnak2"}
+            onPress={() => navigation.navigate("KebutuhanAnak2")}
           >
             <View
               style={{
@@ -156,7 +156,7 @@ export default function KebutuhanAnak() {
               flexDirection: "row",
               marginBottom: 10,
             }}
-            onPress={"KebutuhanAnak3"}
+            onPress={() => navigation.navigate("KebutuhanAnak3")}
           >
             <View
               style={{
@@ -198,7 +198,7 @@ export default function KebutuhanAnak() {
               flexDirection: "row",
               marginBottom: 10,
             }}
-            onPress={"KebutuhanAnak4"}
+            onPress={() => navigation.navigate("KebutuhanAnak4")}
           >
             <View
               style={{
@@ -240,7 +240,7 @@ export default function KebutuhanAnak() {
               flexDirection: "row",
               marginBottom: 10,
             }}
-            onPress={"KebutuhanAnak5"}
+            onPress={() => navigation.navigate("KebutuhanAnak6")}
           >
             <View
               style={{
