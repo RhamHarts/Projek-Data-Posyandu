@@ -9,7 +9,15 @@ import {
   Alert,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  where,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 import { auth, firestore } from "../../../ConfigFirebase/firebase";
 import { useNavigation } from "@react-navigation/native";
 
@@ -39,7 +47,10 @@ const DataKaderAdmin = () => {
           );
 
           const kaderSnapshot = await getDocs(kaderQ);
-          const kaderData = kaderSnapshot.docs.map((doc) => doc.data());
+          const kaderData = kaderSnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
           setDataKader(kaderData);
         }
       } catch (error) {
@@ -84,6 +95,19 @@ const DataKaderAdmin = () => {
       }
     } catch (error) {
       console.log("Terjadi kesalahan saat menyimpan data kader:", error);
+    }
+  };
+
+  const handleDeleteDataKader = async (id) => {
+    try {
+      await deleteDoc(doc(firestore, "DataKader", id));
+
+      const updatedDataKader = dataKader.filter((kader) => kader.id !== id);
+      setDataKader(updatedDataKader);
+
+      console.log("Data kader berhasil dihapus dari Firestore!");
+    } catch (error) {
+      console.log("Terjadi kesalahan saat menghapus data kader:", error);
     }
   };
 
@@ -165,6 +189,15 @@ const DataKaderAdmin = () => {
                   <Text style={{ marginLeft: 5 }}>{kader.PosisiKader}</Text>
                 </View>
               </View>
+              <TouchableOpacity
+                onPress={() => handleDeleteDataKader(kader.id)}
+                style={{
+                  marginHorizontal: 10,
+                  padding: 5,
+                }}
+              >
+                <Icon name="trash" size={20} color="red" />
+              </TouchableOpacity>
             </View>
           ))
         )}

@@ -18,7 +18,7 @@ const HomeScreenAdmin = () => {
         <View style={styles.menuContainer}>
           <TouchableOpacity
             style={styles.menuItem}
-            onPress={() => navigation.navigate("EPPGBM")}
+            onPress={() => navigation.navigate("EPPGBM_Admin")}
           >
             <Image
               source={require("../../../../images/eppgbm.png")}

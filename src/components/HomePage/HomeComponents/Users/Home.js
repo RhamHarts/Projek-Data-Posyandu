@@ -142,7 +142,7 @@ const Home = () => {
 
         <TouchableOpacity
           style={styles.menuItem}
-          onPress={() => navigation.navigate("EPPGBM")}
+          onPress={() => navigation.navigate("EPPGBM_Users")}
         >
           <Image
             source={require("../../../../images/eppgbm.png")}

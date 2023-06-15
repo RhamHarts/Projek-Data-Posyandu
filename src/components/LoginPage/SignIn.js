@@ -12,11 +12,13 @@ import {
   where,
   getDocs,
 } from "firebase/firestore";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigation = useNavigation();
   const firestore = getFirestore();
@@ -109,23 +111,48 @@ const SignIn = () => {
         }}
         placeholder="Masukkan Email Anda"
       />
-      <TextInput
-        value={password}
-        onChangeText={(text) => setPassword(text)}
+      <View
         style={{
+          flexDirection: "row",
+          alignItems: "center",
           marginHorizontal: 20,
           backgroundColor: "#FFFFFF",
           marginTop: 10,
           borderRadius: 9,
           elevation: 2,
           paddingLeft: 10,
-          color: "grey",
-          padding: 15,
+          paddingRight: 5,
           borderColor: "grey",
         }}
-        placeholder="Masukkan Password Anda"
-        secureTextEntry={true}
-      />
+      >
+        <TextInput
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+          style={{
+            flex: 1,
+            backgroundColor: "#FFFFFF",
+            marginTop: 10,
+            borderRadius: 9,
+            paddingLeft: 0,
+            color: "grey",
+            padding: 15,
+            borderColor: "grey",
+          }}
+          placeholder="Masukkan Password Anda"
+          secureTextEntry={!showPassword}
+        />
+        <TouchableOpacity
+          style={{ padding: 10, marginTop: 10 }}
+          onPress={() => setShowPassword(!showPassword)}
+        >
+          <Icon
+            name={showPassword ? "eye-slash" : "eye"}
+            color="grey"
+            size={20}
+          />
+        </TouchableOpacity>
+      </View>
+
       <TouchableOpacity
         style={{ marginTop: 20, marginRight: 20 }}
         onPress={() => navigation.navigate("LupaPassword")}

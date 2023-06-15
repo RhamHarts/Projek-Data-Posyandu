@@ -1,46 +1,113 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
   TextInput,
-  Image,
-  Flatlist,
   ScrollView,
+  Alert,
 } from "react-native";
-// import DatePicker from "react-native-datepicker";
-import { RadioButton } from "react-native-paper"; // import dari 'react-native-elements' diganti menjadi 'react-native-paper'
-import Icon from "react-native-vector-icons/FontAwesome5";
+import { RadioButton } from "react-native-paper";
+import DateTimePicker from "@react-native-community/datetimepicker";
 import { useNavigation } from "@react-navigation/native";
+import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
+import { firestore, auth } from "../../../ConfigFirebase/firebase";
+import Icon from "react-native-vector-icons/FontAwesome5";
 
-const EPPGBM = () => {
+const EPPGBM_Admin_Detail = ({ route }) => {
   const navigation = useNavigation();
+  const currentUser = auth.currentUser;
+  const { id } = route.params;
+
   const [nokk, setNokk] = useState("");
   const [nikAnak, setNikAnak] = useState("");
   const [anakke, setAnakke] = useState("");
   const [namaBayi, setNamaBayi] = useState("");
-  const [tanggalLahir, setTanggalLahir] = useState("");
+  const [tanggalLahir, setTanggalLahir] = useState(new Date());
   const [jenisKelamin, setJenisKelamin] = useState("");
-  const [BBL, setBBL] = useState("");
-  const [orangTua, setOrangTua] = useState("");
+  const [BeratBadanLahir, setBeratBadanLahir] = useState("");
   const [nikAyah, setNikAyah] = useState("");
   const [alamat, setAlamat] = useState("");
+  const [showDatePicker, setShowDatePicker] = useState(false);
 
-  const [tinggiBadan, setTinggiBadan] = useState("");
-  const [beratBadan, setBeratBadan] = useState("");
-  const [bulan, setBulan] = useState("");
-  const [data, setData] = useState([]);
-
-  const handleSubmit = () => {
-    const newData = {
-      tinggiBadan: tinggiBadan,
-      beratBadan: beratBadan,
-      bulan: bulan,
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const userRef = doc(firestore, "EPPGBM", id);
+        const userSnapshot = await getDoc(userRef);
+        if (userSnapshot.exists()) {
+          const data = userSnapshot.data();
+          setNokk(data.nokk);
+          setNikAnak(data.nikAnak);
+          setAnakke(data.anakke);
+          setNamaBayi(data.namaBayi);
+          setTanggalLahir(data.tanggalLahir.toDate());
+          setJenisKelamin(data.jenisKelamin);
+          setBeratBadanLahir(data.BeratBadanLahir);
+          setNikAyah(data.nikAyah);
+          setAlamat(data.alamat);
+          // Set state dan setter lainnya sesuai dengan struktur data yang ingin ditampilkan
+        }
+      } catch (error) {
+        console.error("Gagal mengambil data:", error);
+      }
     };
-    setData([...data, newData]);
-    setTinggiBadan("");
-    setBeratBadan("");
-    setBulan("");
+
+    fetchData();
+  }, [id]);
+
+  const handleSubmit = async () => {
+    try {
+      // Simpan data yang diubah
+      const newData = {
+        nokk,
+        nikAnak,
+        anakke,
+        namaBayi,
+        tanggalLahir,
+        jenisKelamin,
+        BeratBadanLahir,
+        nikAyah,
+        alamat,
+        // Set data lainnya sesuai dengan struktur data yang ingin disimpan
+      };
+      await updateDoc(doc(firestore, "EPPGBM", id), newData);
+      alert("Anda berhasil memperbarui data");
+    } catch (error) {
+      console.error("Gagal menyimpan data:", error);
+      alert("Terjadi kesalahan saat menyimpan data");
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await deleteDoc(doc(firestore, "EPPGBM", id));
+      alert("Data berhasil dihapus");
+      navigation.goBack();
+    } catch (error) {
+      console.error("Gagal menghapus data:", error);
+      alert("Terjadi kesalahan saat menghapus data");
+    }
+  };
+
+  const showDeleteConfirmation = () => {
+    Alert.alert("Konfirmasi", "Apakah Anda yakin ingin menghapus data ini?", [
+      {
+        text: "Batal",
+        style: "cancel",
+      },
+      {
+        text: "Hapus",
+        style: "destructive",
+        onPress: handleDelete,
+      },
+    ]);
+  };
+
+  const onChangeTanggalLahir = (event, selectedDate) => {
+    const currentDate = selectedDate || tanggalLahir;
+    setShowDatePicker(false);
+    setTanggalLahir(currentDate);
   };
 
   return (
@@ -50,7 +117,7 @@ const EPPGBM = () => {
           style={{
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 30,
+            marginTop: 0,
             padding: 10,
             backgroundColor: "#03a9f4",
             alignSelf: "stretch",
@@ -61,6 +128,14 @@ const EPPGBM = () => {
             flexDirection: "row",
           }}
         >
+          <TouchableOpacity onPress={() => navigation.navigate("EPPGBM_Admin")}>
+            <Icon
+              name="arrow-left"
+              size={25}
+              color="white"
+              style={{ marginLeft: -147 }}
+            />
+          </TouchableOpacity>
           <Text
             style={{
               fontSize: 20,
@@ -69,7 +144,7 @@ const EPPGBM = () => {
               color: "#fff",
             }}
           >
-            Form EPPGBM
+            EPPGBM
           </Text>
         </View>
 
@@ -78,7 +153,8 @@ const EPPGBM = () => {
         </View>
 
         <TextInput
-          keyboardType="Numeric"
+          value={nokk}
+          keyboardType="numeric"
           onChangeText={(text) => setNokk(text)}
           style={{
             marginHorizontal: 20,
@@ -99,7 +175,8 @@ const EPPGBM = () => {
         </View>
 
         <TextInput
-          keyboardType="Numeric"
+          value={nikAnak}
+          keyboardType="numeric"
           onChangeText={(text) => setNikAnak(text)}
           style={{
             marginHorizontal: 20,
@@ -114,12 +191,12 @@ const EPPGBM = () => {
           }}
           placeholder="Masukkan NIK Anak"
         />
-
         <View style={{ top: 20, marginLeft: 25 }}>
           <Text> Anak Ke </Text>
         </View>
 
         <TextInput
+          value={anakke}
           keyboardType="Numeric"
           onChangeText={(text) => setAnakke(text)}
           style={{
@@ -141,6 +218,7 @@ const EPPGBM = () => {
         </View>
 
         <TextInput
+          value={namaBayi}
           keyboardType="text"
           onChangeText={(text) => setNamaBayi(text)}
           style={{
@@ -161,9 +239,8 @@ const EPPGBM = () => {
           <Text>Tanggal Lahir </Text>
         </View>
 
-        <TextInput
-          keyboardType="Numeric"
-          onChangeText={(text) => setTanggalLahir(text)}
+        <TouchableOpacity
+          onPress={() => setShowDatePicker(true)}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",
@@ -174,9 +251,20 @@ const EPPGBM = () => {
             color: "grey",
             padding: 15,
             borderColor: "grey",
+            justifyContent: "center",
           }}
-          placeholder="Masukkan Tanggal Lahir"
-        />
+        >
+          <Text>{tanggalLahir.toDateString()}</Text>
+        </TouchableOpacity>
+
+        {showDatePicker && (
+          <DateTimePicker
+            value={tanggalLahir}
+            mode="date"
+            display="default"
+            onChange={onChangeTanggalLahir}
+          />
+        )}
 
         <View style={{ top: 20, marginLeft: 25 }}>
           <Text>Jenis Kelamin </Text>
@@ -225,8 +313,9 @@ const EPPGBM = () => {
         </View>
 
         <TextInput
+          value={BeratBadanLahir}
           keyboardType="Numeric"
-          onChangeText={(text) => setBBL(text)}
+          onChangeText={(text) => setBeratBadanLahir(text)}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",
@@ -239,6 +328,8 @@ const EPPGBM = () => {
             borderColor: "grey",
           }}
           placeholder="Masukkan Berat Badan Lahir"
+          placeholderTextColor="grey"
+          renderText={(text) => `${text} KG`}
         />
 
         <View style={{ top: 20, marginLeft: 25 }}>
@@ -246,6 +337,7 @@ const EPPGBM = () => {
         </View>
 
         <TextInput
+          value={nikAyah}
           keyboardType="Numeric"
           onChangeText={(text) => setNikAyah(text)}
           style={{
@@ -267,6 +359,7 @@ const EPPGBM = () => {
         </View>
 
         <TextInput
+          value={alamat}
           keyboardType="text"
           onChangeText={(text) => setAlamat(text)}
           style={{
@@ -304,9 +397,29 @@ const EPPGBM = () => {
             borderRadius: 9,
             elevation: 2,
           }}
+          onPress={handleSubmit}
         >
           <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
             Masukkan Data
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={{
+            marginTop: 20,
+            backgroundColor: "#ff0000",
+            paddingVertical: 15,
+            marginHorizontal: 20,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 9,
+            elevation: 2,
+            marginBottom: 20,
+          }}
+          onPress={showDeleteConfirmation}
+        >
+          <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
+            Hapus Data
           </Text>
         </TouchableOpacity>
       </View>
@@ -314,4 +427,4 @@ const EPPGBM = () => {
   );
 };
 
-export default EPPGBM;
+export default EPPGBM_Admin_Detail;

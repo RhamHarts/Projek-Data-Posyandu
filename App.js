@@ -14,13 +14,17 @@ import LupaPassword from "./src/components/LoginPage/LupaPassword";
 //Admin
 import DataKaderAdmin from "./src/components/HomePage/HomeComponents/Admin/DataKaderAdmin";
 import TabHomeAdmin from "./src/components/HomePage/HomeComponents/Admin/TabHomeAdmin";
-
+import EPPGBM_Admin from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin";
+import EPPGBM_Admin1 from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin1";
+import EPPGBM_Admin_Detail from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin_Detail";
+import TableForm from "./src/components/HomePage/HomeComponents/TableForm";
 //Users
 import TabHome from "./src/components/HomePage/HomeComponents/Users/TabHome";
 import TumbuhKembangAnak from "./src/components/HomePage/HomeComponents/Users/HomeComponent/TumbuhKembangAnak";
 import DataKaderUsers from "./src/components/HomePage/HomeComponents/Users/HomeComponent/DataKaderUsers";
 import KebutuhanAnak from "./src/components/HomePage/HomeComponents/Users/HomeComponent/KebutuhanAnak";
 import DeteksiStunting from "./src/components/HomePage/HomeComponents/Users/HomeComponent/DeteksiStunting";
+import EPPGBM_Users from "./src/components/HomePage/HomeComponents/Users/HomeComponent/EPPGBM_Users";
 
 import KebutuhanAnak1 from "./src/components/HomePage/HomeComponents/Users/HomeComponent/Kebutuhananak/KebutuhanAnak1";
 import KebutuhanAnak2 from "./src/components/HomePage/HomeComponents/Users/HomeComponent/Kebutuhananak/KebutuhanAnak2";
@@ -38,8 +42,6 @@ import PusatBantuan from "./src/components/HomePage/HomeComponents/Users/Profile
 import TentangAplikasi from "./src/components/HomePage/HomeComponents/Users/ProfileComponents/TentangAplikasi";
 import KebijakanPrivasi from "./src/components/HomePage/HomeComponents/Users/ProfileComponents/KebijakanPrivasi";
 import SyaratDanKetentuan from "./src/components/HomePage/HomeComponents/Users/ProfileComponents/SyaratDanKetentuan";
-import EPPGBM from "./src/components/HomePage/HomeComponents/EPPGBM";
-import TableForm from "./src/components/HomePage/HomeComponents/TableForm";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_cG4GEYf1ZBGPxmUMfCgwJmRt5pOTVLA",
@@ -73,7 +75,13 @@ const App = () => {
         <Stack.Screen name="DataKaderUsers" component={DataKaderUsers} />
         <Stack.Screen name="KebutuhanAnak" component={KebutuhanAnak} />
         <Stack.Screen name="DeteksiStunting" component={DeteksiStunting} />
-        <Stack.Screen name="EPPGBM" component={EPPGBM} />
+        <Stack.Screen name="EPPGBM_Admin" component={EPPGBM_Admin} />
+        <Stack.Screen name="EPPGBM_Admin1" component={EPPGBM_Admin1} />
+        <Stack.Screen
+          name="EPPGBM_Admin_Detail"
+          component={EPPGBM_Admin_Detail}
+        />
+        <Stack.Screen name="EPPGBM_Users" component={EPPGBM_Users} />
         <Stack.Screen name="TableForm" component={TableForm} />
         <Stack.Screen name="InformasiAkun" component={InformasiAkun} />
         <Stack.Screen name="UbahPassword" component={UbahPassword} />
