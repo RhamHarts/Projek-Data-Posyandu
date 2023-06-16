@@ -72,8 +72,11 @@ const Register = () => {
   };
 
   const handleNoHPChange = (text) => {
+    // Menghapus spasi dan karakter non-angka dari input nomor handphone
+    const cleanedText = text.replace(/\D/g, "");
+
     // Pastikan angka "08" di awal nomor handphone
-    let updatedNoHP = text;
+    let updatedNoHP = cleanedText;
     if (!updatedNoHP.startsWith("08")) {
       updatedNoHP = "08" + updatedNoHP;
     }

@@ -90,6 +90,25 @@ const EPPGBM_Admin1 = () => {
     setTanggalLahir(currentDate);
   };
 
+  const handleNokkChange = (text) => {
+    // Remove any non-numeric characters from the input
+    const numericText = text.replace(/[^0-9]/g, "");
+    setNokk(numericText);
+  };
+
+  const handleNikChange = (text) => {
+    // Remove any non-numeric characters from the input
+    const numericText = text.replace(/[^0-9]/g, "");
+    setNikAnak(numericText);
+    setNikAyah(numericText);
+  };
+
+  const onChangeTanggalLahir = (event, selectedDate) => {
+    const currentDate = selectedDate || tanggalLahir;
+    setShowDatePicker(false);
+    setTanggalLahir(currentDate);
+  };
+
   return (
     <ScrollView>
       <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
@@ -134,8 +153,9 @@ const EPPGBM_Admin1 = () => {
 
         <TextInput
           value={nokk}
-          keyboardType="Numeric"
-          onChangeText={(text) => setNokk(text)}
+          keyboardType="numeric"
+          onChangeText={handleNokkChange}
+          maxLength={15}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",
@@ -156,8 +176,9 @@ const EPPGBM_Admin1 = () => {
 
         <TextInput
           value={nikAnak}
-          keyboardType="Numeric"
-          onChangeText={(text) => setNikAnak(text)}
+          keyboardType="numeric"
+          onChangeText={handleNikChange}
+          maxLength={16}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",
@@ -314,13 +335,56 @@ const EPPGBM_Admin1 = () => {
         />
 
         <View style={{ top: 20, marginLeft: 25 }}>
+          <Text>Orang Tua </Text>
+        </View>
+
+        <View style={{ marginTop: 50 }}>
+          <RadioButton.Group
+            onValueChange={(newValue) => setOrangTua(newValue)}
+            value={jenisKelamin}
+          >
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+                marginBottom: 20,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  flex: 1,
+                  left: 25,
+                }}
+              >
+                <Text>Kandung</Text>
+                <RadioButton value="Kandung" />
+              </View>
+              <Text>Angkat</Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  flex: 1,
+                  marginRight: 50,
+                }}
+              >
+                <RadioButton value="Angkat" />
+              </View>
+            </View>
+          </RadioButton.Group>
+        </View>
+
+        <View style={{ top: 20, marginLeft: 25 }}>
           <Text>NIK Ayah</Text>
         </View>
 
         <TextInput
           value={nikAyah}
-          keyboardType="Numeric"
-          onChangeText={(text) => setNikAyah(text)}
+          keyboardType="numeric"
+          onChangeText={handleNikChange}
+          maxLength={16}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",
