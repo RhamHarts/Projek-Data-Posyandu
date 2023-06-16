@@ -13,8 +13,8 @@ export default function MyTabs() {
         component={HomeAdmin}
         options={{
           tabBarLabel: "Home",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="home" color="#03a9f4" size={26} />
           ),
         }}
       />
@@ -23,8 +23,8 @@ export default function MyTabs() {
         component={ProfileAdmin}
         options={{
           tabBarLabel: "Profile",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
+          tabBarIcon: () => (
+            <MaterialCommunityIcons name="account" color="#03a9f4" size={26} />
           ),
         }}
       />

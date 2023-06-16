@@ -57,7 +57,7 @@ const EPPGBM_Admin1 = () => {
           namaBayi,
           tanggalLahir,
           jenisKelamin,
-          BeratBadanLahir: parseFloat(BeratBadanLahir),
+          BeratBadanLahir,
           orangTua,
           nikAyah,
           alamat,
@@ -93,14 +93,25 @@ const EPPGBM_Admin1 = () => {
   const handleNokkChange = (text) => {
     // Remove any non-numeric characters from the input
     const numericText = text.replace(/[^0-9]/g, "");
-    setNokk(numericText);
+    // Restrict the input to a maximum of 15 digits
+    const truncatedText = numericText.slice(0, 15);
+    setNokk(truncatedText);
   };
 
-  const handleNikChange = (text) => {
+  const handleNikAnakChange = (text) => {
     // Remove any non-numeric characters from the input
     const numericText = text.replace(/[^0-9]/g, "");
-    setNikAnak(numericText);
-    setNikAyah(numericText);
+    // Restrict the input to a maximum of 16 digits
+    const truncatedText = numericText.slice(0, 16);
+    setNikAnak(truncatedText);
+  };
+
+  const handleNikAyahChange = (text) => {
+    // Remove any non-numeric characters from the input
+    const numericText = text.replace(/[^0-9]/g, "");
+    // Restrict the input to a maximum of 16 digits
+    const truncatedText = numericText.slice(0, 16);
+    setNikAyah(truncatedText);
   };
 
   const onChangeTanggalLahir = (event, selectedDate) => {
@@ -177,7 +188,7 @@ const EPPGBM_Admin1 = () => {
         <TextInput
           value={nikAnak}
           keyboardType="numeric"
-          onChangeText={handleNikChange}
+          onChangeText={handleNikAnakChange}
           maxLength={16}
           style={{
             marginHorizontal: 20,
@@ -363,7 +374,7 @@ const EPPGBM_Admin1 = () => {
         <TextInput
           value={nikAyah}
           keyboardType="numeric"
-          onChangeText={handleNikChange}
+          onChangeText={handleNikAyahChange}
           maxLength={16}
           style={{
             marginHorizontal: 20,

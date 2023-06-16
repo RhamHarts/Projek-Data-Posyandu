@@ -45,9 +45,9 @@ const EPPGBM_Admin_Detail = ({ route }) => {
           setTanggalLahir(data.tanggalLahir.toDate());
           setJenisKelamin(data.jenisKelamin);
           setBeratBadanLahir(data.BeratBadanLahir);
+          setOrangTua(data.orangTua);
           setNikAyah(data.nikAyah);
           setAlamat(data.alamat);
-          // Set state dan setter lainnya sesuai dengan struktur data yang ingin ditampilkan
         }
       } catch (error) {
         console.error("Gagal mengambil data:", error);
@@ -68,6 +68,7 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         tanggalLahir,
         jenisKelamin,
         BeratBadanLahir,
+        orangTua,
         nikAyah,
         alamat,
         // Set data lainnya sesuai dengan struktur data yang ingin disimpan
@@ -117,11 +118,20 @@ const EPPGBM_Admin_Detail = ({ route }) => {
     setNokk(numericText);
   };
 
-  const handleNikChange = (text) => {
+  const handleNikAnakChange = (text) => {
     // Remove any non-numeric characters from the input
     const numericText = text.replace(/[^0-9]/g, "");
-    setNikAnak(numericText);
-    setNikAyah(numericText);
+    // Restrict the input to a maximum of 16 digits
+    const truncatedText = numericText.slice(0, 16);
+    setNikAnak(truncatedText);
+  };
+
+  const handleNikAyahChange = (text) => {
+    // Remove any non-numeric characters from the input
+    const numericText = text.replace(/[^0-9]/g, "");
+    // Restrict the input to a maximum of 16 digits
+    const truncatedText = numericText.slice(0, 16);
+    setNikAyah(truncatedText);
   };
 
   return (
@@ -192,7 +202,7 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         <TextInput
           value={nikAnak}
           keyboardType="numeric"
-          onChangeText={handleNikChange}
+          onChangeText={handleNikAnakChange}
           maxLength={16}
           style={{
             marginHorizontal: 20,
@@ -330,7 +340,7 @@ const EPPGBM_Admin_Detail = ({ route }) => {
 
         <TextInput
           value={BeratBadanLahir}
-          keyboardType="Numeric"
+          keyboardType="numeric"
           onChangeText={(text) => setBeratBadanLahir(text)}
           style={{
             marginHorizontal: 20,
@@ -345,8 +355,11 @@ const EPPGBM_Admin_Detail = ({ route }) => {
           }}
           placeholder="Masukkan Berat Badan Lahir"
           placeholderTextColor="grey"
-          renderText={(text) => `${text} KG`}
         />
+
+        <View style={{ top: 20, marginLeft: 25 }}>
+          <Text>Orang Tua </Text>
+        </View>
 
         <TextInput
           value={orangTua}
@@ -373,7 +386,7 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         <TextInput
           value={nikAyah}
           keyboardType="numeric"
-          onChangeText={handleNikChange}
+          onChangeText={handleNikAyahChange}
           maxLength={16}
           style={{
             marginHorizontal: 20,
