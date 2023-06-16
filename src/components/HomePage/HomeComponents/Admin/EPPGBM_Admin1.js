@@ -123,7 +123,7 @@ const EPPGBM_Admin1 = () => {
             borderBottomWidth: 1,
             borderBottomColor: "black",
             zIndex: 1,
-            marginBottom: 20,
+            marginBottom: 5,
             flexDirection: "row",
           }}
         >
@@ -199,7 +199,7 @@ const EPPGBM_Admin1 = () => {
 
         <TextInput
           value={anakke}
-          keyboardType="Numeric"
+          keyboardType="numeric"
           onChangeText={(text) => setAnakke(text)}
           style={{
             marginHorizontal: 20,
@@ -316,7 +316,7 @@ const EPPGBM_Admin1 = () => {
 
         <TextInput
           value={BeratBadanLahir}
-          keyboardType="Numeric"
+          keyboardType="numeric"
           onChangeText={(text) => setBeratBadanLahir(text)}
           style={{
             marginHorizontal: 20,
@@ -338,43 +338,23 @@ const EPPGBM_Admin1 = () => {
           <Text>Orang Tua </Text>
         </View>
 
-        <View style={{ marginTop: 50 }}>
-          <RadioButton.Group
-            onValueChange={(newValue) => setOrangTua(newValue)}
-            value={jenisKelamin}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                marginBottom: 20,
-              }}
-            >
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  flex: 1,
-                  left: 25,
-                }}
-              >
-                <Text>Kandung</Text>
-                <RadioButton value="Kandung" />
-              </View>
-              <Text>Angkat</Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  alignItems: "center",
-                  flex: 1,
-                  marginRight: 50,
-                }}
-              >
-                <RadioButton value="Angkat" />
-              </View>
-            </View>
-          </RadioButton.Group>
-        </View>
+        <TextInput
+          value={orangTua}
+          keyboardType="text"
+          onChangeText={(text) => setOrangTua(text)}
+          style={{
+            marginHorizontal: 20,
+            backgroundColor: "#FFFFFF",
+            marginTop: 30,
+            borderRadius: 9,
+            elevation: 2,
+            paddingLeft: 10,
+            color: "grey",
+            padding: 15,
+            borderColor: "grey",
+          }}
+          placeholder="Masukkan Nama Orang Tua"
+        />
 
         <View style={{ top: 20, marginLeft: 25 }}>
           <Text>NIK Ayah</Text>

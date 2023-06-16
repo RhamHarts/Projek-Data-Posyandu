@@ -19,6 +19,15 @@ const DeteksiStunting = () => {
   const [beratBadan, setBeratBadan] = useState("");
 
   const handleDeteksiStunting = () => {
+    if (
+      umur === "" ||
+      jenisKelamin === "" ||
+      tinggiBadan === "" ||
+      beratBadan === ""
+    ) {
+      Alert.alert("Error", "Silahkan isi data yang sesuai");
+      return;
+    }
     // Konversi input menjadi tipe data numerik
     const age = parseInt(umur);
     const height = parseInt(tinggiBadan);
@@ -37,24 +46,28 @@ const DeteksiStunting = () => {
         Alert.alert("Hasil Deteksi", "Anak Anda mengalami stunting.");
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi anak anda terlalu rendah secara rata-rata anak pada umumnya."
+          "Tinggi anak Anda terlalu rendah secara rata-rata anak pada umumnya."
         );
       } else if (zScoreBB1 < -1) {
         Alert.alert("Hasil Deteksi", "Anak Anda mengalami stunting.");
         Alert.alert(
           "Hasil Deteksi",
-          "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
+          "Berat anak Anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB1 + 3 * sdTB1) {
+      } else if (height > medianTB1 + 3 * sdTB1 && zScoreBB1 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB1 + 3 * sdBB1) {
+      } else if (weight > medianBB1 + 3 * sdBB1 && zScoreTB1 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB1 >= -1 && zScoreBB1 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB1 >= -2 && zScoreTB1 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -79,16 +92,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB2 + 3 * sdTB2) {
+      } else if (height > medianTB2 + 3 * sdTB2 && zScoreBB2 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB2 + 3 * sdBB2) {
+      } else if (weight > medianBB2 + 3 * sdBB2 && zScoreTB2 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB2 >= -2 && zScoreBB2 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB2 >= -2 && zScoreTB2 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -113,16 +130,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB3 + 3 * sdTB3) {
+      } else if (height > medianTB3 + 3 * sdTB3 && zScoreBB3 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB3 + 3 * sdBB3) {
+      } else if (weight > medianBB3 + 3 * sdBB3 && zScoreTB3 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB3 >= -2 && zScoreBB3 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB3 >= -2 && zScoreTB3 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -147,16 +168,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB4 + 3 * sdTB4) {
+      } else if (height > medianTB4 + 3 * sdTB4 && zScoreBB4 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB4 + 3 * sdBB4) {
+      } else if (weight > medianBB4 + 3 * sdBB4 && zScoreTB4 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB4 >= -2 && zScoreBB4 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB4 >= -2 && zScoreTB4 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -181,16 +206,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB5 + 3 * sdTB5) {
+      } else if (height > medianTB5 + 3 * sdTB5 && zScoreBB5 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB5 + 3 * sdBB5) {
+      } else if (weight > medianBB5 + 3 * sdBB5 && zScoreTB5 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB5 >= -2 && zScoreBB5 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB5 >= -2 && zScoreTB5 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -215,16 +244,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB6 + 3 * sdTB6) {
+      } else if (height > medianTB6 + 3 * sdTB6 && zScoreBB6 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB6 + 3 * sdBB6) {
+      } else if (weight > medianBB6 + 3 * sdBB6 && zScoreTB6 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB6 >= -2 && zScoreBB6 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB6 >= -2 && zScoreTB6 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -249,16 +282,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB7 + 3 * sdTB7) {
+      } else if (height > medianTB7 + 3 * sdTB7 && zScoreBB7 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB7 + 3 * sdBB7) {
+      } else if (weight > medianBB7 + 3 * sdBB7 && zScoreTB7 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB7 >= -2 && zScoreBB7 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB7 >= -2 && zScoreTB7 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -283,16 +320,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB8 + 3 * sdTB8) {
+      } else if (height > medianTB8 + 3 * sdTB8 && zScoreBB8 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB8 + 3 * sdBB8) {
+      } else if (weight > medianBB8 + 3 * sdBB8 && zScoreTB8 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB8 >= -2 && zScoreBB8 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB8 >= -2 && zScoreTB8 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -317,16 +358,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB9 + 3 * sdTB9) {
+      } else if (height > medianTB9 + 3 * sdTB9 && zScoreBB9 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB9 + 3 * sdBB9) {
+      } else if (weight > medianBB9 + 3 * sdBB9 && zScoreTB9 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB9 >= -2 && zScoreBB9 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB9 >= -2 && zScoreTB9 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -351,16 +396,20 @@ const DeteksiStunting = () => {
           "Hasil Deteksi",
           "Berat anak anda terlalu rendah secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianTB10 + 3 * sdTB10) {
+      } else if (height > medianTB10 + 3 * sdTB10 && zScoreBB10 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Tinggi badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Tinggi badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
-      } else if (height > medianBB10 + 3 * sdBB10) {
+      } else if (weight > medianBB10 + 3 * sdBB10 && zScoreTB10 >= -1) {
         Alert.alert(
           "Hasil Deteksi",
-          "Berat badan anak anda terlalu tinggi secara rata-rata anak pada umumnya."
+          "Berat badan anak Anda terlalu tinggi secara rata-rata anak pada umumnya."
         );
+      } else if (zScoreBB10 >= -2 && zScoreBB10 <= 1) {
+        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
+      } else if (zScoreTB10 >= -2 && zScoreTB10 <= 3) {
+        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
       } else {
         Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
       }
@@ -379,7 +428,7 @@ const DeteksiStunting = () => {
           style={{
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 30,
+            marginTop: 10,
             padding: 10,
             backgroundColor: "#03a9f4",
             alignSelf: "stretch",

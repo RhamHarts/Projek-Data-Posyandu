@@ -39,6 +39,11 @@ const EPPGBM_Users = () => {
     }
   };
 
+  const handleNokkChange = (text) => {
+    // Remove any non-numeric characters from the input
+    const numericText = text.replace(/[^0-9]/g, "");
+    setNokk(numericText);
+  };
   return (
     <View style={styles.container}>
       <View
@@ -78,8 +83,10 @@ const EPPGBM_Users = () => {
       <Text style={styles.title}>Cari Nomor KK</Text>
       <TextInput
         style={styles.input}
-        placeholder="Masukkan No KK Anda"
-        onChangeText={(text) => setSearchText(text)}
+        keyboardType="numeric"
+        onChangeText={handleNokkChange}
+        maxLength={15}
+        placeholder="Masukkan Nomor KK Anda"
         value={searchText}
       />
       <Button title="Cari" onPress={handleSearch} />

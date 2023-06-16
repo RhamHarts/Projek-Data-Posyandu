@@ -26,6 +26,7 @@ const EPPGBM_Admin_Detail = ({ route }) => {
   const [tanggalLahir, setTanggalLahir] = useState(new Date());
   const [jenisKelamin, setJenisKelamin] = useState("");
   const [BeratBadanLahir, setBeratBadanLahir] = useState("");
+  const [orangTua, setOrangTua] = useState("");
   const [nikAyah, setNikAyah] = useState("");
   const [alamat, setAlamat] = useState("");
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -110,6 +111,19 @@ const EPPGBM_Admin_Detail = ({ route }) => {
     setTanggalLahir(currentDate);
   };
 
+  const handleNokkChange = (text) => {
+    // Remove any non-numeric characters from the input
+    const numericText = text.replace(/[^0-9]/g, "");
+    setNokk(numericText);
+  };
+
+  const handleNikChange = (text) => {
+    // Remove any non-numeric characters from the input
+    const numericText = text.replace(/[^0-9]/g, "");
+    setNikAnak(numericText);
+    setNikAyah(numericText);
+  };
+
   return (
     <ScrollView>
       <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
@@ -155,7 +169,8 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         <TextInput
           value={nokk}
           keyboardType="numeric"
-          onChangeText={(text) => setNokk(text)}
+          onChangeText={handleNokkChange}
+          maxLength={15}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",
@@ -177,7 +192,8 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         <TextInput
           value={nikAnak}
           keyboardType="numeric"
-          onChangeText={(text) => setNikAnak(text)}
+          onChangeText={handleNikChange}
+          maxLength={16}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",
@@ -332,14 +348,33 @@ const EPPGBM_Admin_Detail = ({ route }) => {
           renderText={(text) => `${text} KG`}
         />
 
+        <TextInput
+          value={orangTua}
+          keyboardType="text"
+          onChangeText={(text) => setOrangTua(text)}
+          style={{
+            marginHorizontal: 20,
+            backgroundColor: "#FFFFFF",
+            marginTop: 30,
+            borderRadius: 9,
+            elevation: 2,
+            paddingLeft: 10,
+            color: "grey",
+            padding: 15,
+            borderColor: "grey",
+          }}
+          placeholder="Masukkan Nama Orang Tua"
+        />
+
         <View style={{ top: 20, marginLeft: 25 }}>
           <Text>NIK Ayah</Text>
         </View>
 
         <TextInput
           value={nikAyah}
-          keyboardType="Numeric"
-          onChangeText={(text) => setNikAyah(text)}
+          keyboardType="numeric"
+          onChangeText={handleNikChange}
+          maxLength={16}
           style={{
             marginHorizontal: 20,
             backgroundColor: "#FFFFFF",

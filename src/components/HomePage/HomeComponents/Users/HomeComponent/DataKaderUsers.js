@@ -65,7 +65,7 @@ export default function DataKaderUser() {
         style={{
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 20,
+          marginTop: 10,
           padding: 10,
           backgroundColor: "#03a9f4",
           alignSelf: "stretch",

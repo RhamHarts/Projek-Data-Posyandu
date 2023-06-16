@@ -20,7 +20,7 @@ export default function KebutuhanAnak() {
           style={{
             justifyContent: "center",
             alignItems: "center",
-            marginTop: 30,
+            marginTop: 10,
             padding: 10,
             backgroundColor: "#03a9f4",
             alignSelf: "stretch",
