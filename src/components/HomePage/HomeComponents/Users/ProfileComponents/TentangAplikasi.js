@@ -22,7 +22,7 @@ export default function TentangAplikasi() {
           break;
         case "kontak":
           content =
-            "Untuk pertanyaan lebih lanjut hubungi kami ke email kelvinpranata@gmail.com.";
+            "Untuk pertanyaan lebih lanjut hubungi kami ke email amonisasi@gmail.com.";
           break;
         default:
           content = "";

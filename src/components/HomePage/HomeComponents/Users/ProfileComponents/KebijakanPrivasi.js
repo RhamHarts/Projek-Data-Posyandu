@@ -130,7 +130,7 @@ const KebijakanPrivasi = () => {
           privasi ini atau penggunaan data pribadi Anda, silakan hubungi kami
           melalui informasi kontak berikut:
         </Text>
-        <Text style={styles.contactInfo}>KelvinPranata@gmail.com</Text>
+        <Text style={styles.contactInfo}>amonisasi@gmail.com</Text>
       </View>
     </ScrollView>
   );

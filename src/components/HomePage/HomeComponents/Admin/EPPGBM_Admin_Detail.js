@@ -6,6 +6,7 @@ import {
   TextInput,
   ScrollView,
   Alert,
+  Modal,
 } from "react-native";
 import { RadioButton } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -13,6 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { firestore, auth } from "../../../ConfigFirebase/firebase";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import { AntDesign } from "@expo/vector-icons";
 
 const EPPGBM_Admin_Detail = ({ route }) => {
   const navigation = useNavigation();
@@ -29,6 +31,13 @@ const EPPGBM_Admin_Detail = ({ route }) => {
   const [orangTua, setOrangTua] = useState("");
   const [nikAyah, setNikAyah] = useState("");
   const [alamat, setAlamat] = useState("");
+  const [tinggiBadan, setTinggiBadan] = useState("");
+  const [beratBadan, setBeratBadan] = useState("");
+  const [bulan, setBulan] = useState("");
+  const [data, setData] = useState([]);
+  const [datamap, setDatamap] = useState([]);
+  const [isErrorVisible, setIsErrorVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   useEffect(() => {
@@ -38,6 +47,8 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         const userSnapshot = await getDoc(userRef);
         if (userSnapshot.exists()) {
           const data = userSnapshot.data();
+          const datamap = data.TableForm;
+          console.log(datamap); // Menampilkan data di console.log
           setNokk(data.nokk);
           setNikAnak(data.nikAnak);
           setAnakke(data.anakke);
@@ -48,6 +59,8 @@ const EPPGBM_Admin_Detail = ({ route }) => {
           setOrangTua(data.orangTua);
           setNikAyah(data.nikAyah);
           setAlamat(data.alamat);
+
+          setData(datamap); // Mengupdate state data dengan datamap
         }
       } catch (error) {
         console.error("Gagal mengambil data:", error);
@@ -56,6 +69,15 @@ const EPPGBM_Admin_Detail = ({ route }) => {
 
     fetchData();
   }, [id]);
+
+  useEffect(() => {
+    const initialData = Array.from({ length: 12 }, () => ({
+      tinggiBadan: "",
+      beratBadan: "",
+      bulan: "",
+    }));
+    setData(initialData);
+  }, []);
 
   const handleSubmit = async () => {
     try {
@@ -71,7 +93,11 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         orangTua,
         nikAyah,
         alamat,
-        // Set data lainnya sesuai dengan struktur data yang ingin disimpan
+        TableForm: datamap.map((item) => ({
+          tinggiBadan: item.tinggiBadan,
+          beratBadan: item.beratBadan,
+          bulan: item.bulan,
+        })),
       };
       await updateDoc(doc(firestore, "EPPGBM", id), newData);
       alert("Anda berhasil memperbarui data");
@@ -81,6 +107,22 @@ const EPPGBM_Admin_Detail = ({ route }) => {
     }
   };
 
+  const handleInputChange = (index, field, value) => {
+    const updatedData = [...data];
+    updatedData[index][field] = value;
+    setData(updatedData);
+  };
+
+  const handleDeleteRow = (index) => {
+    const updatedData = [...data];
+    updatedData[index] = {
+      tinggiBadan: "",
+      beratBadan: "",
+      bulan: "",
+    };
+    setData(updatedData);
+  };
+  
   const handleDelete = async () => {
     try {
       await deleteDoc(doc(firestore, "EPPGBM", id));
@@ -132,6 +174,14 @@ const EPPGBM_Admin_Detail = ({ route }) => {
     // Restrict the input to a maximum of 16 digits
     const truncatedText = numericText.slice(0, 16);
     setNikAyah(truncatedText);
+  };
+
+  const handleOpenModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalVisible(false);
   };
 
   return (
@@ -426,12 +476,174 @@ const EPPGBM_Admin_Detail = ({ route }) => {
 
         <TouchableOpacity
           style={{ marginTop: 20, marginRight: 20 }}
-          onPress={() => navigation.navigate("TableForm")}
+          onPress={handleOpenModal}
         >
           <Text style={{ color: "#03a9f4", textAlign: "center" }}>
             Input Data TB Dan BB
           </Text>
         </TouchableOpacity>
+
+        <Modal visible={isModalVisible} animationType="slide">
+          <View style={{ flex: 1, padding: 10 }}>
+            <View
+              style={{
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: 0,
+                padding: 10,
+                backgroundColor: "#03a9f4",
+                alignSelf: "stretch",
+                borderBottomWidth: 0.5,
+                borderBottomColor: "black",
+                zIndex: 1,
+                marginBottom: 5,
+                flexDirection: "row",
+              }}
+            >
+              <TouchableOpacity onPress={handleCloseModal}>
+                <Icon
+                  name="arrow-left"
+                  size={25}
+                  color="white"
+                  style={{ marginLeft: -50 }}
+                />
+              </TouchableOpacity>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: "bold",
+                  textAlign: "center",
+                  color: "#fff",
+                }}
+              >
+                Data Tinggi Dan Berat Badan
+              </Text>
+            </View>
+
+            <ScrollView>
+              <View style={{ marginBottom: 20 }}>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    backgroundColor: "#f1f1f1",
+                    paddingVertical: 10,
+                    paddingHorizontal: 5,
+                  }}
+                >
+                  <Text
+                    style={{
+                      flex: 1,
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      borderRightWidth: 1,
+                      borderRightColor: "#ccc",
+                    }}
+                  >
+                    Tinggi Badan
+                  </Text>
+                  <Text
+                    style={{
+                      flex: 1,
+                      fontWeight: "bold",
+                      textAlign: "center",
+                      borderRightWidth: 1,
+                      borderRightColor: "#ccc",
+                    }}
+                  >
+                    Berat Badan
+                  </Text>
+                  <Text
+                    style={{ flex: 1, fontWeight: "bold", textAlign: "center" }}
+                  >
+                    Bulan
+                  </Text>
+                  <Text style={{ width: 40, textAlign: "center" }}></Text>
+                </View>
+                {data.map((item, index) => (
+                  <View
+                    key={index}
+                    style={{
+                      flexDirection: "row",
+                      paddingVertical: 10,
+                      paddingHorizontal: 5,
+                      borderBottomWidth: 1,
+                      borderBottomColor: "#ccc",
+                      alignItems: "center",
+                    }}
+                  >
+                    <TextInput
+                      style={{
+                        flex: 1,
+                        textAlign: "center",
+                        borderRightWidth: 1,
+                        borderRightColor: "#ccc",
+                        marginRight: 0,
+                      }}
+                      keyboardType="numeric"
+                      value={item.tinggiBadan} // Perbarui properti value untuk kolom Tinggi Badan
+                      onChangeText={(value) =>
+                        handleInputChange(index, "tinggiBadan", value)
+                      }
+                    />
+                    <TextInput
+                      style={{
+                        flex: 1,
+                        textAlign: "center",
+                        borderRightWidth: 1,
+                        borderRightColor: "#ccc",
+                        marginRight: 10,
+                      }}
+                      keyboardType="numeric"
+                      value={item.beratBadan} // Perbarui properti value untuk kolom Berat Badan
+                      onChangeText={(value) =>
+                        handleInputChange(index, "beratBadan", value)
+                      }
+                    />
+                    <TextInput
+                      style={{ flex: 1, textAlign: "center", marginRight: 5 }}
+                      value={item.bulan} // Perbarui properti value untuk kolom Bulan
+                      onChangeText={(value) =>
+                        handleInputChange(index, "bulan", value)
+                      }
+                    />
+                    {item.tinggiBadan || item.beratBadan || item.bulan ? (
+                      <TouchableOpacity
+                        onPress={() => handleDeleteRow(index)}
+                        style={{ marginLeft: 10 }}
+                      >
+                        <AntDesign name="closecircle" size={20} color="red" />
+                      </TouchableOpacity>
+                    ) : (
+                      <View style={{ width: 20, marginLeft: 10 }} />
+                    )}
+                  </View>
+                ))}
+              </View>
+
+              <TouchableOpacity
+                // onPress={handleAddData}
+                style={{
+                  backgroundColor: "#3498db",
+                  paddingVertical: 10,
+                  paddingHorizontal: 30,
+                  borderRadius: 4,
+                  marginLeft: 10,
+                  marginBottom: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    color: "#fff",
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  Tambah Data
+                </Text>
+              </TouchableOpacity>
+            </ScrollView>
+          </View>
+        </Modal>
 
         <TouchableOpacity
           style={{

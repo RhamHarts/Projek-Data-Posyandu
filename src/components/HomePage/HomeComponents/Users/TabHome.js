@@ -2,7 +2,6 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Home from "./Home";
 import Profile from "./Profile";
-import Notifications from "./Notification";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -16,16 +15,6 @@ export default function MyTabs() {
           tabBarLabel: "Home",
           tabBarIcon: () => (
             <MaterialCommunityIcons name="home" color="#03a9f4" size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{
-          tabBarLabel: "Notifications",
-          tabBarIcon: () => (
-            <MaterialCommunityIcons name="bell" color="#03a9f4" size={26} />
           ),
         }}
       />

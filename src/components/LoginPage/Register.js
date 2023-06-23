@@ -9,7 +9,10 @@ import {
   ScrollView,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+} from "firebase/auth";
 import { collection, addDoc } from "firebase/firestore";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
@@ -51,6 +54,9 @@ const Register = () => {
       const user = userCredential.user;
       alert("Anda berhasil daftar");
 
+      // Kirim email verifikasi
+      await sendEmailVerification(user);
+
       // Mengambil UID pengguna
       const uid = user.uid;
 
@@ -66,6 +72,7 @@ const Register = () => {
       };
 
       await addDoc(collection(firestore, "users"), userData);
+      navigation.navigate("SignIn");
     } catch (error) {
       alert(error.message);
     }

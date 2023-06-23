@@ -17,22 +17,20 @@ export default function PusatBantuan() {
 
       switch (menu) {
         case "1":
-          content = "Ini adalah halaman kebijakan privasi.";
+          content =
+            "Laporkan bug atau masalah ke email kami :amonisasi@gmail.com.";
           break;
         case "2":
-          content = "Ini adalah halaman syarat dan ketentuan.";
+          content =
+            "Masukkan data-data yang dibutuhkan yang tertera dalam input form.";
           break;
         case "3":
-          content = "Ini adalah halaman tentang aplikasi.";
+          content =
+            "Masukkan data-data yang dibutuhkan seperti nomor hanpdhone,alamat,nik dan lain lain.";
           break;
         case "4":
-          content = "Ini adalah halaman kontak kami.";
-          break;
-        case "5":
-          content = "Ini adalah halaman kontak kami.";
-          break;
-        case "6":
-          content = "Ini adalah halaman kontak kami.";
+          content =
+            "Jika anda ada pertanyaan lebih lanjut maka tanyakan ke email kami :amonisasi@gmail.com.";
           break;
         default:
           content = "";
@@ -172,9 +170,7 @@ export default function PusatBantuan() {
           }}
         >
           <View>
-            <Text style={{ left: 10 }}>
-              Bagaimana cara agar tidak menjadi jamet
-            </Text>
+            <Text style={{ left: 10 }}>Pertanyaan lebih lanjut :</Text>
           </View>
           <View style={{ flex: 1, alignItems: "flex-end" }}>
             {expandedMenu === "4" ? (
@@ -187,60 +183,6 @@ export default function PusatBantuan() {
       </TouchableOpacity>
 
       {renderExpandedContent("4")}
-
-      <TouchableOpacity onPress={() => handlePress("5")}>
-        <View
-          style={{
-            borderColor: "grey",
-            borderWidth: 0.5,
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 10,
-          }}
-        >
-          <View>
-            <Text style={{ left: 10 }}>
-              Bagaimana cara agar terhindar dari fitnah dajjal
-            </Text>
-          </View>
-          <View style={{ flex: 1, alignItems: "flex-end" }}>
-            {expandedMenu === "5" ? (
-              <Icon name="arrow-down-drop-circle" size={30} color="black" />
-            ) : (
-              <Icon name="arrow-right-drop-circle" size={30} color="black" />
-            )}
-          </View>
-        </View>
-      </TouchableOpacity>
-
-      {renderExpandedContent("5")}
-
-      <TouchableOpacity onPress={() => handlePress("6")}>
-        <View
-          style={{
-            borderColor: "grey",
-            borderWidth: 0.5,
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 10,
-          }}
-        >
-          <View>
-            <Text style={{ left: 10 }}>
-              Bagaimana cara agar titit bisa berputar seperti baling-baling
-            </Text>
-          </View>
-          <View style={{ flex: 1, alignItems: "flex-end" }}>
-            {expandedMenu === "6" ? (
-              <Icon name="arrow-down-drop-circle" size={30} color="black" />
-            ) : (
-              <Icon name="arrow-right-drop-circle" size={30} color="black" />
-            )}
-          </View>
-        </View>
-      </TouchableOpacity>
-
-      {renderExpandedContent("6")}
     </View>
   );
 }

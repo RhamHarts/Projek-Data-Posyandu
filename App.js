@@ -9,6 +9,7 @@ import LoginLanding from "./src/components/LoginPage/LoginLanding";
 import SignIn from "./src/components/LoginPage/SignIn";
 import Register from "./src/components/LoginPage/Register";
 import LupaPassword from "./src/components/LoginPage/LupaPassword";
+import VerifikasiLogin from "./src/components/LoginPage/VerifikasiLogin";
 
 //Home Components
 //Admin
@@ -17,7 +18,7 @@ import TabHomeAdmin from "./src/components/HomePage/HomeComponents/Admin/TabHome
 import EPPGBM_Admin from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin";
 import EPPGBM_Admin1 from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin1";
 import EPPGBM_Admin_Detail from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin_Detail";
-import TableForm from "./src/components/HomePage/HomeComponents/TableForm";
+import TableForm from "./src/components/HomePage/HomeComponents/Admin/TableForm";
 //Users
 import TabHome from "./src/components/HomePage/HomeComponents/Users/TabHome";
 import TumbuhKembangAnak from "./src/components/HomePage/HomeComponents/Users/HomeComponent/TumbuhKembangAnak";
@@ -67,6 +68,7 @@ const App = () => {
       >
         <Stack.Screen name="LoginLanding" component={LoginLanding} />
         <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="VerifikasiLogin" component={VerifikasiLogin} />
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="LupaPassword" component={LupaPassword} />
         <Stack.Screen name="TabHome" component={TabHome} />

@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  Alert,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import SignInHeader from "./Components/SignInHeader";
@@ -48,7 +55,7 @@ const SignIn = () => {
         } else {
           console.log("Admin tidak terdaftar");
         }
-      } else {
+      } else if (user.emailVerified) {
         const usersRef = collection(firestore, "users");
         const q = query(usersRef, where("email", "==", user.email));
         const querySnapshot = await getDocs(q);
@@ -64,6 +71,12 @@ const SignIn = () => {
         } else {
           console.log("Users tidak terdaftar");
         }
+      } else {
+        Alert.alert(
+          "Pengguna Tidak Terdaftar",
+          "Silakan verifikasi alamat email Anda sebelum melakukan login.",
+          [{ text: "OK" }]
+        );
       }
     } catch (error) {
       alert(error.message);

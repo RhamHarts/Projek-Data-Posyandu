@@ -9,31 +9,31 @@ const data = [
         text: "Nutrisi dan makanan seimbang",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/13-18-1.png"),
         width: 100,
-        height: 80,
+        height: 100,
       },
       {
         text: "Perkembangan motorik kasar dan halus",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/13-18-2.png"),
-        width: 90,
-        height: 70,
+        width: 100,
+        height: 100,
       },
       {
         text: "Pengembangan bahasa dan komunikasi",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/13-18-3.png"),
-        width: 60,
-        height: 80,
+        width: 100,
+        height: 100,
       },
       {
         text: "Perkembangan sosial dan emosional",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/13-18-4.png"),
         width: 100,
-        height: 80,
+        height: 100,
       },
       {
         text: "Rutinitas dan tidur yang konsisten",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/13-18-5.png"),
-        width: 110,
-        height: 80,
+        width: 100,
+        height: 100,
       },
     ],
   },
@@ -43,32 +43,32 @@ const data = [
       {
         text: "Pengenalan makanan baru dengan tekstur dan rasa yang beragam",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-1.png"),
-        width: 90,
-        height: 50,
+        width: 100,
+        height: 100,
       },
       {
         text: "Perkembangan keterampilan motorik halus",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-2.png"),
         width: 100,
-        height: 65,
+        height: 105,
       },
       {
         text: "Kemampuan bahasa yang lebih maju",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-3.png"),
         width: 100,
-        height: 70,
+        height: 100,
       },
       {
         text: "Peningkatan dalam bermain bersama anak lain",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-4.png"),
-        width: 110,
-        height: 70,
+        width: 100,
+        height: 100,
       },
       {
         text: "Konsistensi dalam rutinitas dan tidur",
         image: require("../../../../../../images/Kebutuhanchildren/13-24/19-24-5.png"),
-        width: 110,
-        height: 80,
+        width: 100,
+        height: 100,
       },
     ],
   },
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   needItem: {
-    width: "32%", // Ubah lebar menjadi 30%
+    width: "45%", // Ubah lebar menjadi 30%
     aspectRatio: 1, // Tetapkan aspek rasio menjadi 1 (untuk menjaga gambar tetap proporsional)
     justifyContent: "center",
     alignItems: "center",
@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     marginRight: 0, // Menghilangkan margin right pada gambar
   },
   needItemText: {
-    fontSize: 12, // Mengurangi ukuran font untuk memuat teks dengan baik dalam ruang yang lebih kecil
+    fontSize: 13, // Mengurangi ukuran font untuk memuat teks dengan baik dalam ruang yang lebih kecil
     textAlign: "center", // Pusatkan teks
   },
 });
