@@ -7,16 +7,19 @@ import {
   StyleSheet,
   Modal,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { firestore } from "../../../../ConfigFirebase/firebase";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { useNavigation } from "@react-navigation/native";
+import moment from "moment";
 
 const EPPGBM_Users = () => {
   const [searchText, setSearchText] = useState("");
-  const [kkData, setKKData] = useState(null);
+  const [tableForm, setTableForm] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
+  const [kkData, setKKData] = useState(null);
 
   const navigation = useNavigation();
 
@@ -28,10 +31,13 @@ const EPPGBM_Users = () => {
 
       if (!querySnapshot.empty) {
         const data = querySnapshot.docs[0].data();
+
+        const tableFormData = data.TableForm; // Mengambil data TableForm dari dokumen
         setKKData(data);
+        setTableForm(tableFormData); // Menyimpan data TableForm ke state
         setModalVisible(true);
       } else {
-        setKKData(null);
+        setTableForm(null); // Mengatur state TableForm menjadi null jika data tidak ditemukan
         console.log("Nomor KK tidak ditemukan");
       }
     } catch (error) {
@@ -39,87 +45,96 @@ const EPPGBM_Users = () => {
     }
   };
 
-  const handleNokkChange = (text) => {
-    // Remove any non-numeric characters from the input
-    const numericText = text.replace(/[^0-9]/g, "");
-    setNokk(numericText);
+  const formatDate = (date) => {
+    if (date && date.toDate) {
+      // Mengonversi objek date menjadi string dengan format yang diinginkan
+      const formattedDate = date
+        .toDate()
+        .toLocaleDateString("id-ID", { dateStyle: "long" });
+      return formattedDate;
+    }
+    return "";
   };
+
+  const renderTableForm = () => {
+    if (tableForm) {
+      return (
+        <View style={styles.modalItem}>
+          <Text style={styles.modalItemTitle}>Data Tinggi dan Berat Badan</Text>
+          {tableForm.map((item, index) => (
+            <View key={index} style={styles.modalItem}>
+              {item.bulan && <Text>Bulan: {item.bulan}</Text>}
+              {item.tinggiBadan && (
+                <Text>Tinggi Badan: {item.tinggiBadan}</Text>
+              )}
+              {item.beratBadan && <Text>Berat Badan: {item.beratBadan}</Text>}
+            </View>
+          ))}
+        </View>
+      );
+    }
+    return null;
+  };
+
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          padding: 10,
-          backgroundColor: "#03a9f4",
-          alignSelf: "stretch",
-          borderBottomWidth: 0.5,
-          borderBottomColor: "black",
-          zIndex: 1,
-          bottom: 290,
-          flexDirection: "row",
-        }}
-      >
+      <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.navigate("TabHome")}>
           <Icon
             name="arrow-left"
             size={25}
             color="white"
-            style={{ marginLeft: -147 }}
+            style={styles.backButton}
           />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#fff",
-          }}
-        >
-          EPPGBM
-        </Text>
+        <Text style={styles.title}>EPPGBM</Text>
       </View>
 
-      <Text style={styles.title}>Cari Nomor KK</Text>
+      <Text style={styles.searchTitle}>Cari Nomor KK</Text>
       <TextInput
         style={styles.input}
         keyboardType="numeric"
-        onChangeText={handleNokkChange}
-        maxLength={15}
         placeholder="Masukkan Nomor KK Anda"
         value={searchText}
+        onChangeText={setSearchText}
       />
       <Button title="Cari" onPress={handleSearch} />
-
-      <Modal
-        visible={modalVisible}
-        animationType="slide"
-        onRequestClose={() => setModalVisible(false)}
-      >
-        <View style={styles.modalContainer}>
-          <Text style={styles.modalTitle}>Informasi Data EPPGBM</Text>
-          {kkData && (
-            <View style={styles.modalContent}>
-              <Text style={styles.modalItem}>No KK: {kkData.nokk}</Text>
-              <Text style={styles.modalItem}>NIK Anak: {kkData.nikAnak}</Text>
-              <Text style={styles.modalItem}>Anak Ke: {kkData.anakke}</Text>
-              <Text style={styles.modalItem}>Nama Bayi: {kkData.namaBayi}</Text>
-              <Text style={styles.modalItem}>
-                Tanggal Lahir: {kkData.TanggalLahir}
-              </Text>
-              <Text style={styles.modalItem}>
-                Jenis Kelamin: {kkData.jenisKelamin}
-              </Text>
-              <Text style={styles.modalItem}>
-                Berat Badan Lahir: {kkData.BeratBadanLahir}
-              </Text>
-              <Text style={styles.modalItem}>Orang Tua: {kkData.orangTua}</Text>
-              <Text style={styles.modalItem}>NIK Ayah: {kkData.nikAyah}</Text>
-            </View>
-          )}
-          <Button title="Tutup" onPress={() => setModalVisible(false)} />
-        </View>
-      </Modal>
+      <ScrollView>
+        <Modal
+          visible={modalVisible}
+          animationType="slide"
+          onRequestClose={() => setModalVisible(false)}
+        >
+          <View style={styles.modalContainer}>
+            <Text style={styles.modalTitle}>Informasi Data EPPGBM</Text>
+            {kkData && (
+              <View style={styles.modalContent}>
+                <Text style={styles.modalItem}>No KK: {kkData.nokk}</Text>
+                <Text style={styles.modalItem}>NIK Anak: {kkData.nikAnak}</Text>
+                <Text style={styles.modalItem}>Anak Ke: {kkData.anakke}</Text>
+                <Text style={styles.modalItem}>
+                  Nama Bayi: {kkData.namaBayi}
+                </Text>
+                <Text style={styles.modalItem}>
+                  Tanggal Lahir: {formatDate(kkData.tanggalLahir)}
+                </Text>
+                <Text style={styles.modalItem}>
+                  Jenis Kelamin: {kkData.jenisKelamin}
+                </Text>
+                <Text style={styles.modalItem}>
+                  Berat Badan Lahir: {kkData.beratBadanLahir}
+                </Text>
+                <Text style={styles.modalItem}>
+                  Orang Tua: {kkData.orangTua}
+                </Text>
+                <Text style={styles.modalItem}>NIK Ayah: {kkData.nikAyah}</Text>
+                {renderTableForm()}
+              </View>
+            )}
+            <Button title="Tutup" onPress={() => setModalVisible(false)} />
+          </View>
+        </Modal>
+      </ScrollView>
     </View>
   );
 };
@@ -131,10 +146,32 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#F8F8F8",
   },
+  header: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    backgroundColor: "#03a9f4",
+    alignSelf: "stretch",
+    borderBottomWidth: 0.5,
+    borderBottomColor: "black",
+    zIndex: 1,
+    flexDirection: "row",
+  },
+  backButton: {
+    marginLeft: -147,
+  },
   title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff",
+    marginBottom: 20,
+  },
+  searchTitle: {
     fontSize: 24,
     fontWeight: "bold",
     marginBottom: 20,
+    marginTop: 250,
     color: "#03a9f4",
   },
   input: {
@@ -156,21 +193,27 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 0,
     color: "#03a9f4",
   },
   modalContent: {
-    width: "100%",
     borderWidth: 0.6,
     borderRadius: 10,
-    paddingHorizontal: 10,
+    paddingHorizontal: 30,
     paddingVertical: 20,
-    marginBottom: 20,
+    marginBottom: 0,
     backgroundColor: "white",
   },
   modalItem: {
     fontSize: 16,
     marginBottom: 10,
+  },
+  modalItemTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+    marginTop: 10,
+    textAlign: "center",
   },
 });
 

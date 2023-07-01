@@ -111,7 +111,7 @@ const TumbuhKembangAnak = () => {
 
         <TextInput
           value={namaBayi}
-          keyboardType="text"
+          keyboardType="default"
           onChangeText={(text) => setNamaBayi(text)}
           style={{
             marginHorizontal: 20,

@@ -18,7 +18,7 @@ export default function PusatBantuan() {
       switch (menu) {
         case "1":
           content =
-            "Laporkan bug atau masalah ke email kami :amonisasi@gmail.com.";
+            "Laporkan bug atau masalah ke email kami :Amonisasi1@gmail.com.";
           break;
         case "2":
           content =

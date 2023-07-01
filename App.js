@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { initializeApp } from "firebase/app";
 import "firebase/auth";
+import { getFCMRegistrationTokenAsync } from "./src/components/HomePage/HomeComponents/Users/getFCMRegistrationTokenAsync";
 
-//Login Page
+//Login Page`
 import LoginLanding from "./src/components/LoginPage/LoginLanding";
 import SignIn from "./src/components/LoginPage/SignIn";
 import Register from "./src/components/LoginPage/Register";
@@ -60,6 +61,17 @@ initializeApp(firebaseConfig);
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  useEffect(() => {
+    getFCMRegistrationTokenAsync()
+      .then((token) => {
+        console.log("FCM registration token:", token);
+        // Lakukan sesuatu dengan token, misalnya kirim ke server
+      })
+      .catch((error) => {
+        console.log("Failed to get FCM registration token:", error);
+      });
+  }, []);
+
   return (
     <NavigationContainer>
       <Stack.Navigator

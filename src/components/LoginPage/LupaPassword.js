@@ -1,13 +1,44 @@
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, TouchableOpacity, TextInput, Image } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  Image,
+  Alert,
+} from "react-native";
+import { auth } from "./../ConfigFirebase/firebase";
 
 import SignInHeader from "./Components/SignInHeader";
 
 const LupaPassword = () => {
   const [email, setEmail] = useState("");
-
+  const [resetPasswordError, setResetPasswordError] = useState("");
   const navigation = useNavigation();
+
+  const handleResetPassword = () => {
+    setResetPasswordError(""); // Menghapus pesan error sebelumnya
+
+    auth
+      .sendPasswordResetEmail(email)
+      .then(() => {
+        // Reset password email terkirim berhasil
+        console.log("Email reset password terkirim.");
+        Alert.alert("Password berhasil direset");
+      })
+      .catch((error) => {
+        // Terjadi kesalahan saat mengirim email reset password
+        console.error(
+          "Terjadi kesalahan saat mengirim email reset password:",
+          error
+        );
+        setResetPasswordError(
+          "Terjadi kesalahan saat mengirim email reset password. Mohon coba lagi."
+        );
+      });
+  };
+
   return (
     <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
       <View style={{ justifyContent: "center", alignItems: "center", top: 50 }}>
@@ -22,7 +53,7 @@ const LupaPassword = () => {
       <SignInHeader
         title="Lupa Password"
         description={
-          "masukkan email anda untuk mendapatkan \n tutorial cara reset password"
+          "Masukkan email Anda untuk mendapatkan\ntutorial cara reset password"
         }
       />
 
@@ -44,6 +75,13 @@ const LupaPassword = () => {
         placeholder="Masukkan Email Anda"
       />
 
+      {/* Tampilkan pesan error jika ada */}
+      {resetPasswordError ? (
+        <Text style={{ color: "red", textAlign: "center", marginTop: 10 }}>
+          {resetPasswordError}
+        </Text>
+      ) : null}
+
       <TouchableOpacity
         style={{
           marginTop: 40,
@@ -55,6 +93,7 @@ const LupaPassword = () => {
           borderRadius: 9,
           elevation: 2,
         }}
+        onPress={handleResetPassword} // Panggil fungsi handleResetPassword saat tombol ditekan
       >
         <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
           Lupa Password

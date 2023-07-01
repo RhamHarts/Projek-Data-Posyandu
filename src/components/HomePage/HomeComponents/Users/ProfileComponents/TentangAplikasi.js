@@ -17,12 +17,11 @@ export default function TentangAplikasi() {
 
       switch (menu) {
         case "tentang":
-          content =
-            "Aplikasi ini dibuat oleh                                                        Versi saat ini adalah Versi 1.0.0";
+          content = "Versi saat ini adalah Versi 1.0.0";
           break;
         case "kontak":
           content =
-            "Untuk pertanyaan lebih lanjut hubungi kami ke email amonisasi@gmail.com.";
+            "Untuk pertanyaan lebih lanjut hubungi kami ke email Amonisasi1@gmail.com.";
           break;
         default:
           content = "";
