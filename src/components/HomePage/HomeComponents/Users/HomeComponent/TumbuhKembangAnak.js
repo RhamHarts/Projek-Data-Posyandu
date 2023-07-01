@@ -11,7 +11,16 @@ import { RadioButton } from "react-native-paper";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useNavigation } from "@react-navigation/native";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  query,
+  where,
+  getDocs,
+  updateDoc,
+  doc,
+  setDoc,
+} from "firebase/firestore";
 import { firestore, auth } from "../../../../ConfigFirebase/firebase";
 
 const TumbuhKembangAnak = () => {
@@ -24,10 +33,9 @@ const TumbuhKembangAnak = () => {
   const [beratBadan, setBeratBadan] = useState("");
   const [tinggiBadan, setTinggiBadan] = useState("");
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [userData, setUserData] = useState(null); // State untuk menyimpan data pengguna yang ada
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    // Mengambil data pengguna jika sudah tersimpan pada database
     const fetchData = async () => {
       try {
         const userRef = collection(firestore, "TumbuhKembangAnak");
@@ -36,9 +44,16 @@ const TumbuhKembangAnak = () => {
         );
         if (!querySnapshot.empty) {
           const data = querySnapshot.docs[0].data();
+          data.id = querySnapshot.docs[0].id; // Memasukkan id ke dalam data
           setUserData(data);
           setNamaBayi(data.namaBayi);
-          setTanggalLahir(data.tanggalLahir.toDate());
+          if (
+            data.tanggalLahir &&
+            typeof data.tanggalLahir.toDate === "function"
+          ) {
+            setTanggalLahir(data.tanggalLahir.toDate());
+          }
+
           setJenisKelamin(data.jenisKelamin);
           setBeratBadan(data.beratBadan);
           setTinggiBadan(data.tinggiBadan);
@@ -55,25 +70,34 @@ const TumbuhKembangAnak = () => {
     try {
       const data = {
         namaBayi,
-        tanggalLahir,
+        tanggalLahir:
+          tanggalLahir instanceof Date ? tanggalLahir : tanggalLahir.toDate(),
         jenisKelamin,
         beratBadan,
         tinggiBadan,
         userId: currentUser.uid,
       };
 
-      if (userData) {
-        // Jika data pengguna sudah ada, maka update data yang ada
+      if (userData && userData.id) {
         await updateDoc(doc(firestore, "TumbuhKembangAnak", userData.id), data);
         alert("Anda berhasil memperbarui data");
       } else {
-        // Jika data pengguna belum ada, maka tambahkan data baru
         await addDoc(collection(firestore, "TumbuhKembangAnak"), data);
         alert("Anda berhasil memasukkan data");
       }
     } catch (error) {
       console.error("Gagal menyimpan data:", error);
     }
+  };
+
+  const formatDate = (date) => {
+    if (date instanceof Date) {
+      const formattedDate = date.toLocaleDateString("id-ID", {
+        dateStyle: "long",
+      });
+      return formattedDate;
+    }
+    return "";
   };
 
   const onChangeTanggalLahir = (event, selectedDate) => {
@@ -146,7 +170,7 @@ const TumbuhKembangAnak = () => {
             justifyContent: "center",
           }}
         >
-          <Text>{tanggalLahir.toDateString()}</Text>
+          <Text>{formatDate(tanggalLahir)}</Text>
         </TouchableOpacity>
 
         {showDatePicker && (
@@ -268,3 +292,8 @@ const TumbuhKembangAnak = () => {
 };
 
 export default TumbuhKembangAnak;
+
+function formatDate(date) {
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return date.toLocaleDateString(undefined, options);
+}

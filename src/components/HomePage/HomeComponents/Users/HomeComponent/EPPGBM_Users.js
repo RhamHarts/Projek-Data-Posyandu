@@ -8,12 +8,12 @@ import {
   Modal,
   TouchableOpacity,
   ScrollView,
+  Alert,
 } from "react-native";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { firestore } from "../../../../ConfigFirebase/firebase";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { useNavigation } from "@react-navigation/native";
-import moment from "moment";
 
 const EPPGBM_Users = () => {
   const [searchText, setSearchText] = useState("");
@@ -38,10 +38,10 @@ const EPPGBM_Users = () => {
         setModalVisible(true);
       } else {
         setTableForm(null); // Mengatur state TableForm menjadi null jika data tidak ditemukan
-        console.log("Nomor KK tidak ditemukan");
+        Alert.alert("Nomor KK tidak ditemukan");
       }
     } catch (error) {
-      console.log("Terjadi kesalahan saat mencari Nomor KK:", error);
+      Alert.alert("Terjadi kesalahan saat mencari Nomor KK:", error);
     }
   };
 
@@ -122,7 +122,7 @@ const EPPGBM_Users = () => {
                   Jenis Kelamin: {kkData.jenisKelamin}
                 </Text>
                 <Text style={styles.modalItem}>
-                  Berat Badan Lahir: {kkData.beratBadanLahir}
+                  Berat Badan Lahir: {kkData.BeratBadanLahir}
                 </Text>
                 <Text style={styles.modalItem}>
                   Orang Tua: {kkData.orangTua}
@@ -131,7 +131,11 @@ const EPPGBM_Users = () => {
                 {renderTableForm()}
               </View>
             )}
-            <Button title="Tutup" onPress={() => setModalVisible(false)} />
+            <Button
+              style={{ marginTop: 100 }}
+              title="Tutup"
+              onPress={() => setModalVisible(false)}
+            />
           </View>
         </Modal>
       </ScrollView>
@@ -165,7 +169,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     color: "#fff",
-    marginBottom: 20,
   },
   searchTitle: {
     fontSize: 24,
@@ -188,7 +191,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#F8F8F8",
-    padding: 20,
+    padding: 30,
   },
   modalTitle: {
     fontSize: 24,
@@ -199,14 +202,14 @@ const styles = StyleSheet.create({
   modalContent: {
     borderWidth: 0.6,
     borderRadius: 10,
-    paddingHorizontal: 30,
-    paddingVertical: 20,
-    marginBottom: 0,
+    paddingHorizontal: 10,
+    marginTop: 10,
     backgroundColor: "white",
   },
   modalItem: {
     fontSize: 16,
     marginBottom: 10,
+    marginTop: 0,
   },
   modalItemTitle: {
     fontSize: 18,
