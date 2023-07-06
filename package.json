@@ -17,6 +17,7 @@
     "@react-navigation/native-stack": "^6.9.12",
     "babel-preset-expo": "^9.3.2",
     "base64-js": "^1.5.1",
+    "date-fns": "^2.30.0",
     "exceljs": "^4.3.0",
     "expo": "^48.0.19",
     "expo-firebase-messaging": "^2.0.0",

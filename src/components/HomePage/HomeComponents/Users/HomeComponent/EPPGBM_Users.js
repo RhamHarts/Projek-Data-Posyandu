@@ -63,11 +63,13 @@ const EPPGBM_Users = () => {
           <Text style={styles.modalItemTitle}>Data Tinggi dan Berat Badan</Text>
           {tableForm.map((item, index) => (
             <View key={index} style={styles.modalItem}>
-              {item.bulan && <Text>Bulan: {item.bulan}</Text>}
-              {item.tinggiBadan && (
-                <Text>Tinggi Badan: {item.tinggiBadan}</Text>
+              {item.tinggiBadan && item.beratBadan && (
+                <React.Fragment>
+                  <Text>Bulan: {item.bulan}</Text>
+                  <Text>Tinggi Badan: {item.tinggiBadan}</Text>
+                  <Text>Berat Badan: {item.beratBadan}</Text>
+                </React.Fragment>
               )}
-              {item.beratBadan && <Text>Berat Badan: {item.beratBadan}</Text>}
             </View>
           ))}
         </View>

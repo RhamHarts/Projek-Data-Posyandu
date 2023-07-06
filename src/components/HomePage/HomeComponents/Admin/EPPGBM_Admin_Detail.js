@@ -86,6 +86,13 @@ const EPPGBM_Admin_Detail = ({ route }) => {
 
   const handleSubmit = async () => {
     try {
+      // Memperbarui nilai-nilai dalam datamap sesuai dengan data yang diinput oleh pengguna
+      const updatedDataMap = data.map((item) => ({
+        tinggiBadan: item.tinggiBadan,
+        beratBadan: item.beratBadan,
+        bulan: item.bulan,
+      }));
+
       // Simpan data yang diubah
       const newData = {
         nokk,
@@ -98,12 +105,9 @@ const EPPGBM_Admin_Detail = ({ route }) => {
         orangTua,
         nikAyah,
         alamat,
-        TableForm: datamap.map((item) => ({
-          tinggiBadan: item.tinggiBadan,
-          beratBadan: item.beratBadan,
-          bulan: item.bulan,
-        })),
+        TableForm: updatedDataMap,
       };
+
       await updateDoc(doc(firestore, "EPPGBM", id), newData);
       alert("Anda berhasil memperbarui data");
     } catch (error) {
@@ -121,9 +125,9 @@ const EPPGBM_Admin_Detail = ({ route }) => {
   const handleDeleteRow = (index) => {
     const updatedData = [...data];
     updatedData[index] = {
+      ...updatedData[index],
       tinggiBadan: "",
       beratBadan: "",
-      bulan: "",
     };
     setData(updatedData);
   };

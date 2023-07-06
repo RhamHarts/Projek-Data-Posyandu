@@ -22,6 +22,8 @@ import {
 import { firestore, auth } from "../../../ConfigFirebase/firebase";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { AntDesign } from "@expo/vector-icons";
+import { format } from "date-fns";
+import { id } from "date-fns/locale"; // Impor bahasa Indonesia dari paket date-fns
 
 const EPPGBM_Admin1 = () => {
   const navigation = useNavigation();
@@ -47,13 +49,14 @@ const EPPGBM_Admin1 = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const initialData = Array.from({ length: 12 }, () => ({
+    const initialData = Array.from({ length: 12 }, (_, index) => ({
       tinggiBadan: "",
       beratBadan: "",
-      bulan: "",
+      bulan: format(new Date(new Date().getFullYear(), index), "LLLL", { locale: id }), // Format bulan dalam bahasa Indonesia
     }));
     setData(initialData);
   }, []);
+  
 
   const handleSubmit = async () => {
     try {
@@ -110,9 +113,9 @@ const EPPGBM_Admin1 = () => {
   const handleDeleteRow = (index) => {
     const updatedData = [...data];
     updatedData[index] = {
+      ...updatedData[index],
       tinggiBadan: "",
       beratBadan: "",
-      bulan: "",
     };
     setData(updatedData);
   };
