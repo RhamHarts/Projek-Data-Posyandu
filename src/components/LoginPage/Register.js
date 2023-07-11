@@ -7,6 +7,7 @@ import {
   Image,
   FlatList,
   ScrollView,
+  StyleSheet,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -116,10 +117,8 @@ const Register = () => {
 
   return (
     <ScrollView>
-      <View style={{ flex: 1, backgroundColor: "#f7f6fd", marginTop: -100 }}>
-        <View
-          style={{ justifyContent: "center", alignItems: "center", top: 100 }}
-        >
+      <View style={styles.container}>
+        <View style={styles.imageTitle}>
           <Image
             source={require("../../images/3.png")}
             style={{
@@ -136,17 +135,7 @@ const Register = () => {
         <TextInput
           value={username}
           onChangeText={(text) => setUsername(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Username Anda"
         />
 
@@ -154,46 +143,14 @@ const Register = () => {
           value={email}
           keyboardType="email-address"
           onChangeText={(text) => setEmail(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Email Anda"
         />
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            paddingRight: 5,
-            borderColor: "grey",
-          }}
-        >
+        <View style={styles.passwordInputBox}>
           <TextInput
             value={password}
             onChangeText={(text) => setPassword(text)}
-            style={{
-              flex: 1,
-              backgroundColor: "#FFFFFF",
-              marginTop: 10,
-              borderRadius: 9,
-              paddingLeft: 0,
-              color: "grey",
-              padding: 15,
-              borderColor: "grey",
-            }}
+            style={styles.passwordInputBox2}
             placeholder="Masukkan Password Anda"
             secureTextEntry={!showPassword}
           />
@@ -208,33 +165,11 @@ const Register = () => {
             />
           </TouchableOpacity>
         </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            paddingRight: 5,
-            borderColor: "grey",
-          }}
-        >
+        <View style={styles.passwordInputBox}>
           <TextInput
             value={ulangiPassword}
             onChangeText={(text) => setUlangiPassword(text)}
-            style={{
-              flex: 1,
-              backgroundColor: "#FFFFFF",
-              marginTop: 10,
-              borderRadius: 9,
-              paddingLeft: 0,
-              color: "grey",
-              padding: 15,
-              borderColor: "grey",
-            }}
+            style={styles.passwordInputBox2}
             placeholder="Masukkan Ulang Password Anda"
             secureTextEntry={!showPassword1}
           />
@@ -254,50 +189,20 @@ const Register = () => {
           value={noHP}
           keyboardType="numeric"
           onChangeText={handleNoHPChange} // Menggunakan fungsi handleNoHPChange
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Nomor Handphone Anda"
         />
         <TextInput
           value={alamat}
           onChangeText={(text) => setAlamat(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Alamat Anda"
         />
 
         <TextInput
           value={alamatPosyandu}
           onChangeText={(text) => setAlamatPosyandu(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Alamat Posyandu Anda"
           onFocus={() => setShowAlamatPosyanduOptions(true)}
         />
@@ -321,22 +226,8 @@ const Register = () => {
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={{
-            marginTop: 40,
-            backgroundColor: "#03a9f4",
-            paddingVertical: 15,
-            marginHorizontal: 20,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 9,
-            elevation: 2,
-          }}
-          onPress={handleSignUp}
-        >
-          <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
-            Registrasi
-          </Text>
+        <TouchableOpacity style={styles.register} onPress={handleSignUp}>
+          <Text style={styles.registerText}>Registrasi</Text>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -353,4 +244,52 @@ const Register = () => {
   );
 };
 
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f7f6fd", marginTop: -100 },
+  imageTitle: { justifyContent: "center", alignItems: "center", top: 100 },
+  textInputBox: {
+    marginHorizontal: 20,
+    backgroundColor: "#FFFFFF",
+    marginTop: 10,
+    borderRadius: 9,
+    elevation: 2,
+    paddingLeft: 10,
+    color: "grey",
+    padding: 15,
+    borderColor: "grey",
+  },
+  passwordInputBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginHorizontal: 20,
+    backgroundColor: "#FFFFFF",
+    marginTop: 10,
+    borderRadius: 9,
+    elevation: 2,
+    paddingLeft: 10,
+    paddingRight: 5,
+    borderColor: "grey",
+  },
+  passwordInputBox2: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    marginTop: 10,
+    borderRadius: 9,
+    paddingLeft: 0,
+    color: "grey",
+    padding: 15,
+    borderColor: "grey",
+  },
+  register: {
+    marginTop: 40,
+    backgroundColor: "#03a9f4",
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 9,
+    elevation: 2,
+  },
+  registerText: { color: "#FFFFFF", fontSize: 18, fontWeight: "bold" },
+});
 export default Register;

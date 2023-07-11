@@ -15,22 +15,8 @@ export default function KebutuhanAnak() {
 
   return (
     <ScrollView>
-      <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 10,
-            padding: 10,
-            backgroundColor: "#03a9f4",
-            alignSelf: "stretch",
-            borderBottomWidth: 1,
-            borderBottomColor: "black",
-            zIndex: 1,
-            marginBottom: 20,
-            flexDirection: "row",
-          }}
-        >
+      <View style={styles.container}>
+        <View style={styles.title}>
           <TouchableOpacity onPress={() => navigation.navigate("TabHome")}>
             <Icon
               name="arrow-left"
@@ -39,24 +25,11 @@ export default function KebutuhanAnak() {
               style={{ marginLeft: -115 }}
             />
           </TouchableOpacity>
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-              textAlign: "center",
-              color: "#fff",
-            }}
-          >
-            Kebutuhan Anak
-          </Text>
+          <Text style={styles.titleText}>Kebutuhan Anak</Text>
         </View>
 
         <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            bottom: 100,
-          }}
+          style={styles.imageTitle}
         >
           <Image
             source={require("../../../../../images/anakklereng.png")}
@@ -75,14 +48,7 @@ export default function KebutuhanAnak() {
             onPress={() => navigation.navigate("KebutuhanAnak1")}
           >
             <View
-              style={{
-                flexDirection: "row",
-                width: "95%",
-                height: 100,
-                alignItems: "center",
-                backgroundColor: "#FFFFFF",
-                borderWidth: 0.3,
-              }}
+              style={styles.contentContainer}
             >
               <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
                 <Image
@@ -117,14 +83,7 @@ export default function KebutuhanAnak() {
             onPress={() => navigation.navigate("KebutuhanAnak2")}
           >
             <View
-              style={{
-                flexDirection: "row",
-                width: "95%",
-                height: 100,
-                alignItems: "center",
-                backgroundColor: "#FFFFFF",
-                borderWidth: 0.3,
-              }}
+              style={styles.contentContainer}
             >
               <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
                 <Image
@@ -158,15 +117,8 @@ export default function KebutuhanAnak() {
             }}
             onPress={() => navigation.navigate("KebutuhanAnak3")}
           >
-            <View
-              style={{
-                flexDirection: "row",
-                width: "95%",
-                height: 100,
-                alignItems: "center",
-                backgroundColor: "#FFFFFF",
-                borderWidth: 0.3,
-              }}
+          <View
+              style={styles.contentContainer}
             >
               <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
                 <Image
@@ -201,14 +153,7 @@ export default function KebutuhanAnak() {
             onPress={() => navigation.navigate("KebutuhanAnak4")}
           >
             <View
-              style={{
-                flexDirection: "row",
-                width: "95%",
-                height: 100,
-                alignItems: "center",
-                backgroundColor: "#FFFFFF",
-                borderWidth: 0.3,
-              }}
+              style={styles.contentContainer}
             >
               <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
                 <Image
@@ -242,15 +187,8 @@ export default function KebutuhanAnak() {
             }}
             onPress={() => navigation.navigate("KebutuhanAnak6")}
           >
-            <View
-              style={{
-                flexDirection: "row",
-                width: "95%",
-                height: 100,
-                alignItems: "center",
-                backgroundColor: "#FFFFFF",
-                borderWidth: 0.3,
-              }}
+           <View
+              style={styles.contentContainer}
             >
               <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
                 <Image
@@ -281,3 +219,39 @@ export default function KebutuhanAnak() {
     </ScrollView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f7f6fd" },
+  title: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+    padding: 10,
+    backgroundColor: "#03a9f4",
+    alignSelf: "stretch",
+    borderBottomWidth: 1,
+    borderBottomColor: "black",
+    zIndex: 1,
+    marginBottom: 20,
+    flexDirection: "row",
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff",
+  },
+  imageTitle : {
+    justifyContent: "center",
+    alignItems: "center",
+    bottom: 100,
+  },
+  contentContainer : {
+    flexDirection: "row",
+    width: "95%",
+    height: 100,
+    alignItems: "center",
+    backgroundColor: "#FFFFFF",
+    borderWidth: 0.3,
+  }
+});

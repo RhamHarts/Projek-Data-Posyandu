@@ -6,6 +6,7 @@ import {
   TextInput,
   ScrollView,
   Modal,
+  StyleSheet,
 } from "react-native";
 import { RadioButton } from "react-native-paper";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -52,11 +53,12 @@ const EPPGBM_Admin1 = () => {
     const initialData = Array.from({ length: 12 }, (_, index) => ({
       tinggiBadan: "",
       beratBadan: "",
-      bulan: format(new Date(new Date().getFullYear(), index), "LLLL", { locale: id }), // Format bulan dalam bahasa Indonesia
+      bulan: format(new Date(new Date().getFullYear(), index), "LLLL", {
+        locale: id,
+      }), // Format bulan dalam bahasa Indonesia
     }));
     setData(initialData);
   }, []);
-  
 
   const handleSubmit = async () => {
     try {
@@ -160,22 +162,8 @@ const EPPGBM_Admin1 = () => {
 
   return (
     <ScrollView>
-      <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 0,
-            padding: 10,
-            backgroundColor: "#03a9f4",
-            alignSelf: "stretch",
-            borderBottomWidth: 1,
-            borderBottomColor: "black",
-            zIndex: 1,
-            marginBottom: 5,
-            flexDirection: "row",
-          }}
-        >
+      <View style={styles.container}>
+        <View style={styles.title}>
           <TouchableOpacity onPress={() => navigation.navigate("EPPGBM_Admin")}>
             <Icon
               name="arrow-left"
@@ -184,19 +172,10 @@ const EPPGBM_Admin1 = () => {
               style={{ marginLeft: -147 }}
             />
           </TouchableOpacity>
-          <Text
-            style={{
-              fontSize: 20,
-              fontWeight: "bold",
-              textAlign: "center",
-              color: "#fff",
-            }}
-          >
-            EPPGBM
-          </Text>
+          <Text style={styles.textTitle}>EPPGBM</Text>
         </View>
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text> No KK </Text>
         </View>
 
@@ -205,21 +184,11 @@ const EPPGBM_Admin1 = () => {
           keyboardType="numeric"
           onChangeText={handleNokkChange}
           maxLength={15}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan No KK"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text> NIK Anak </Text>
         </View>
 
@@ -228,21 +197,11 @@ const EPPGBM_Admin1 = () => {
           keyboardType="numeric"
           onChangeText={handleNikAnakChange}
           maxLength={16}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan NIK Anak"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text> Anak Ke </Text>
         </View>
 
@@ -250,21 +209,11 @@ const EPPGBM_Admin1 = () => {
           value={anakke}
           keyboardType="numeric"
           onChangeText={(text) => setAnakke(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Data"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Nama Bayi </Text>
         </View>
 
@@ -272,38 +221,17 @@ const EPPGBM_Admin1 = () => {
           value={namaBayi}
           keyboardType="default"
           onChangeText={(text) => setNamaBayi(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Nama Bayi"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Tanggal Lahir </Text>
         </View>
 
         <TouchableOpacity
           onPress={() => setShowDatePicker(true)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-            justifyContent: "center",
-          }}
+          style={styles.textInputBox}
         >
           <Text>{tanggalLahir.toDateString()}</Text>
         </TouchableOpacity>
@@ -317,7 +245,7 @@ const EPPGBM_Admin1 = () => {
           />
         )}
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Jenis Kelamin </Text>
         </View>
 
@@ -359,7 +287,7 @@ const EPPGBM_Admin1 = () => {
           </RadioButton.Group>
         </View>
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Berat Badan Lahir </Text>
         </View>
 
@@ -367,23 +295,13 @@ const EPPGBM_Admin1 = () => {
           value={BeratBadanLahir}
           keyboardType="numeric"
           onChangeText={(text) => setBeratBadanLahir(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Berat Badan Lahir"
           placeholderTextColor="grey"
           renderText={(text) => `${text} KG`}
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Orang Tua </Text>
         </View>
 
@@ -391,21 +309,11 @@ const EPPGBM_Admin1 = () => {
           value={orangTua}
           keyboardType="default"
           onChangeText={(text) => setOrangTua(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Nama Orang Tua"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>NIK Ayah</Text>
         </View>
 
@@ -414,21 +322,11 @@ const EPPGBM_Admin1 = () => {
           keyboardType="numeric"
           onChangeText={handleNikAyahChange}
           maxLength={16}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan NIK Ayah"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Alamat </Text>
         </View>
 
@@ -436,17 +334,7 @@ const EPPGBM_Admin1 = () => {
           value={alamat}
           keyboardType="default"
           onChangeText={(text) => setAlamat(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Alamat"
         />
 
@@ -621,27 +509,59 @@ const EPPGBM_Admin1 = () => {
           </View>
         </Modal>
 
-        <TouchableOpacity
-          style={{
-            marginTop: 40,
-            marginBottom: 10,
-            backgroundColor: "#03a9f4",
-            paddingVertical: 15,
-            marginHorizontal: 20,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 9,
-            elevation: 2,
-          }}
-          onPress={handleSubmit}
-        >
-          <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
-            Masukkan Data
-          </Text>
+        <TouchableOpacity style={styles.submit} onPress={handleSubmit}>
+          <Text style={styles.submitText}>Masukkan Data</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f7f6fd" },
+  title: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 0,
+    padding: 10,
+    backgroundColor: "#03a9f4",
+    alignSelf: "stretch",
+    borderBottomWidth: 1,
+    borderBottomColor: "black",
+    zIndex: 1,
+    marginBottom: 5,
+    flexDirection: "row",
+  },
+  textTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff",
+  },
+  inputBox: { top: 20, marginLeft: 25 },
+  textInputBox: {
+    marginHorizontal: 20,
+    backgroundColor: "#FFFFFF",
+    marginTop: 30,
+    borderRadius: 9,
+    elevation: 2,
+    paddingLeft: 10,
+    color: "grey",
+    padding: 15,
+    borderColor: "grey",
+  },
+  submit: {
+    marginTop: 40,
+    marginBottom: 10,
+    backgroundColor: "#03a9f4",
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 9,
+    elevation: 2,
+  },
+  submitText: { color: "#FFFFFF", fontSize: 18, fontWeight: "bold" },
+});
 
 export default EPPGBM_Admin1;

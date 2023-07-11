@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TouchableOpacity, ScrollView, Button } from "react-native";
+import {
+  Text,
+  View,
+  TouchableOpacity,
+  ScrollView,
+  StyleSheet,
+} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { useNavigation } from "@react-navigation/native";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -103,23 +109,22 @@ export default function EPPBGM_Admin() {
     // Group the data by month
     dataKader.forEach((item) => {
       const tableFormData = item.TableForm; // Access the entire TableForm array
-    
+
       tableFormData.forEach((formData) => {
         const month = formData.bulan;
         const tinggiBadan = formData.tinggiBadan;
         const beratBadan = formData.beratBadan;
-    
+
         if (tinggiBadan !== undefined && beratBadan !== undefined) {
           if (!dataByMonth[month]) {
             dataByMonth[month] = { tinggiBadan: [], beratBadan: [] };
           }
-    
+
           dataByMonth[month].tinggiBadan.push(tinggiBadan);
           dataByMonth[month].beratBadan.push(beratBadan);
         }
       });
     });
-    
 
     // Add column headers
     worksheet.columns = columnHeaders;
@@ -226,20 +231,7 @@ export default function EPPBGM_Admin() {
 
   return (
     <View style={{ flex: 1 }}>
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          padding: 10,
-          backgroundColor: "#03a9f4",
-          alignSelf: "stretch",
-          borderBottomWidth: 0.5,
-          borderBottomColor: "black",
-          zIndex: 1,
-          marginBottom: 20,
-          flexDirection: "row",
-        }}
-      >
+      <View style={styles.title}>
         <TouchableOpacity onPress={() => navigation.navigate("TabHomeAdmin")}>
           <Icon
             name="arrow-left"
@@ -248,16 +240,7 @@ export default function EPPBGM_Admin() {
             style={{ marginLeft: -147 }}
           />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#fff",
-          }}
-        >
-          EPPGBM
-        </Text>
+        <Text style={styles.textTitle}>EPPGBM</Text>
       </View>
 
       <ScrollView>
@@ -273,21 +256,8 @@ export default function EPPBGM_Admin() {
               onPress={() => handleItemPress(kader.id)} // Tambahkan onPress dan berikan fungsi handleDataKaderPress
               style={{ flex: 1 }}
             >
-              <View
-                style={{
-                  flexDirection: "row",
-                  width: "100%",
-                  height: 100,
-                  alignItems: "center",
-                  marginVertical: 15,
-                  backgroundColor: "#FFFFFF",
-                  borderRadius: 10,
-                  elevation: 2,
-                  marginTop: 10,
-                  bottom: 15,
-                }}
-              >
-                <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
+              <View style={styles.dataContainer}>
+                <View style={styles.dataContainer2}>
                   <Icon name="user-circle" size={50} color="#000000" />
                 </View>
                 <View style={{ flex: 1 }}>
@@ -303,36 +273,69 @@ export default function EPPBGM_Admin() {
           ))
         )}
 
-        {/* Button to add new data kader */}
         <TouchableOpacity
-          style={{
-            width: 70,
-            height: 70,
-            borderRadius: 40,
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "#03a9f4",
-            left: 300,
-          }}
+          style={styles.tambahData}
           onPress={() => navigation.navigate("EPPGBM_Admin1")}
         >
           <Icon name="plus-circle" size={50} color="white" />
         </TouchableOpacity>
       </ScrollView>
-      <TouchableOpacity
-        style={{
-          width: "100%",
-          height: 50,
-          backgroundColor: "#03a9f4",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "absolute",
-          bottom: 0,
-        }}
-        onPress={convertToExcel}
-      >
-        <Text style={{ color: "white", fontSize: 16 }}>Convert to Excel</Text>
+      <TouchableOpacity style={styles.convertToExcel} onPress={convertToExcel}>
+        <Text style={styles.TextConvertToExcel}>Convert to Excel</Text>
       </TouchableOpacity>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
+    backgroundColor: "#03a9f4",
+    alignSelf: "stretch",
+    borderBottomWidth: 0.5,
+    borderBottomColor: "black",
+    zIndex: 1,
+    marginBottom: 20,
+    flexDirection: "row",
+  },
+  textTitle: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff",
+  },
+  dataContainer: {
+    flexDirection: "row",
+    width: "100%",
+    height: 100,
+    alignItems: "center",
+    marginVertical: 15,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 10,
+    elevation: 2,
+    marginTop: 10,
+    bottom: 15,
+  },
+  tambahData: {
+    width: 70,
+    height: 70,
+    borderRadius: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#03a9f4",
+    left: 300,
+  },
+  convertToExcel: {
+    width: "100%",
+    height: 50,
+    backgroundColor: "#03a9f4",
+    justifyContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    bottom: 0,
+  },
+  dataContainer2: { margin: 10, padding: 10, marginRight: 10 },
+  TextConvertToExcel: { color: "white", fontSize: 20, fontWeight: "bold" },
+});

@@ -6,6 +6,7 @@ import {
   TextInput,
   Image,
   ScrollView,
+  StyleSheet,
 } from "react-native";
 import { RadioButton } from "react-native-paper";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -108,7 +109,7 @@ const TumbuhKembangAnak = () => {
 
   return (
     <ScrollView>
-      <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
+      <View style={styles.container}>
         <TouchableOpacity onPress={() => navigation.navigate("TabHome")}>
           <Icon
             name="arrow-left"
@@ -118,9 +119,7 @@ const TumbuhKembangAnak = () => {
           />
         </TouchableOpacity>
 
-        <View
-          style={{ justifyContent: "center", alignItems: "center", top: 50 }}
-        >
+        <View style={styles.titleImage}>
           <Image
             source={require("../../../../../images/bayi.png")}
             style={{
@@ -129,7 +128,7 @@ const TumbuhKembangAnak = () => {
             }}
           />
         </View>
-        <View style={{ top: 70, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Nama Anak </Text>
         </View>
 
@@ -137,38 +136,17 @@ const TumbuhKembangAnak = () => {
           value={namaBayi}
           keyboardType="default"
           onChangeText={(text) => setNamaBayi(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 80,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Nama Anak"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Tanggal Lahir </Text>
         </View>
 
         <TouchableOpacity
           onPress={() => setShowDatePicker(true)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-            justifyContent: "center",
-          }}
+          style={styles.textInputBox}
         >
           <Text>{formatDate(tanggalLahir)}</Text>
         </TouchableOpacity>
@@ -182,7 +160,7 @@ const TumbuhKembangAnak = () => {
           />
         )}
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Jenis Kelamin </Text>
         </View>
 
@@ -224,7 +202,7 @@ const TumbuhKembangAnak = () => {
           </RadioButton.Group>
         </View>
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Berat Badan (KG) </Text>
         </View>
 
@@ -232,21 +210,11 @@ const TumbuhKembangAnak = () => {
           value={beratBadan}
           keyboardType="numeric"
           onChangeText={(text) => setBeratBadan(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Berat Badan"
         />
 
-        <View style={{ top: 20, marginLeft: 25 }}>
+        <View style={styles.inputBox}>
           <Text>Tinggi Badan (CM)</Text>
         </View>
 
@@ -254,46 +222,45 @@ const TumbuhKembangAnak = () => {
           value={tinggiBadan}
           keyboardType="numeric"
           onChangeText={(text) => setTinggiBadan(text)}
-          style={{
-            marginHorizontal: 20,
-            backgroundColor: "#FFFFFF",
-            marginTop: 30,
-            borderRadius: 9,
-            elevation: 2,
-            paddingLeft: 10,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textInputBox}
           placeholder="Masukkan Tinggi Badan"
         />
 
-        <TouchableOpacity
-          style={{
-            marginTop: 40,
-            marginBottom: 10,
-            backgroundColor: "#03a9f4",
-            paddingVertical: 15,
-            marginHorizontal: 20,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: 9,
-            elevation: 2,
-          }}
-          onPress={handleSignUp}
-        >
-          <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
-            Masukkan Data
-          </Text>
+        <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+          <Text style={styles.buttonText}>Masukkan Data</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
   );
 };
 
-export default TumbuhKembangAnak;
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f7f6fd" },
+  titleImage: { justifyContent: "center", alignItems: "center", top: 50 },
+  inputBox: { top: 20, marginLeft: 25 },
+  textInputBox: {
+    marginHorizontal: 20,
+    backgroundColor: "#FFFFFF",
+    marginTop: 30,
+    borderRadius: 9,
+    elevation: 2,
+    paddingLeft: 10,
+    color: "grey",
+    padding: 15,
+    borderColor: "grey",
+  },
+  button: {
+    marginTop: 40,
+    marginBottom: 10,
+    backgroundColor: "#03a9f4",
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 9,
+    elevation: 2,
+  },
+  buttonText: { color: "#FFFFFF", fontSize: 18, fontWeight: "bold" },
+});
 
-function formatDate(date) {
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  return date.toLocaleDateString(undefined, options);
-}
+export default TumbuhKembangAnak;

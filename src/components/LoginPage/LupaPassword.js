@@ -7,6 +7,7 @@ import {
   TextInput,
   Image,
   Alert,
+  StyleSheet,
 } from "react-native";
 import { auth } from "./../ConfigFirebase/firebase";
 
@@ -40,8 +41,8 @@ const LupaPassword = () => {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
-      <View style={{ justifyContent: "center", alignItems: "center", top: 50 }}>
+    <View style={styles.container}>
+      <View style={styles.titleImage}>
         <Image
           source={require("../../images/3.png")}
           style={{
@@ -61,43 +62,19 @@ const LupaPassword = () => {
         value={email}
         keyboardType="email-address"
         onChangeText={(text) => setEmail(text)}
-        style={{
-          marginHorizontal: 20,
-          backgroundColor: "#FFFFFF",
-          marginTop: 10,
-          borderRadius: 9,
-          elevation: 2,
-          paddingLeft: 10,
-          color: "grey",
-          padding: 15,
-          borderColor: "grey",
-        }}
+        style={styles.textInputBox}
         placeholder="Masukkan Email Anda"
       />
 
-      {/* Tampilkan pesan error jika ada */}
       {resetPasswordError ? (
-        <Text style={{ color: "red", textAlign: "center", marginTop: 10 }}>
-          {resetPasswordError}
-        </Text>
+        <Text style={styles.errorText}>{resetPasswordError}</Text>
       ) : null}
 
       <TouchableOpacity
-        style={{
-          marginTop: 40,
-          backgroundColor: "#03a9f4",
-          paddingVertical: 15,
-          marginHorizontal: 20,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 9,
-          elevation: 2,
-        }}
+        style={styles.button}
         onPress={handleResetPassword} // Panggil fungsi handleResetPassword saat tombol ditekan
       >
-        <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
-          Lupa Password
-        </Text>
+        <Text style={styles.buttonText}>Lupa Password</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -112,4 +89,31 @@ const LupaPassword = () => {
   );
 };
 
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f7f6fd" },
+  titleImage: { justifyContent: "center", alignItems: "center", top: 50 },
+  textInputBox: {
+    marginHorizontal: 20,
+    backgroundColor: "#FFFFFF",
+    marginTop: 10,
+    borderRadius: 9,
+    elevation: 2,
+    paddingLeft: 10,
+    color: "grey",
+    padding: 15,
+    borderColor: "grey",
+  },
+  errorText: { color: "red", textAlign: "center", marginTop: 10 },
+  button: {
+    marginTop: 40,
+    backgroundColor: "#03a9f4",
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 9,
+    elevation: 2,
+  },
+  buttonText: { color: "#FFFFFF", fontSize: 18, fontWeight: "bold" },
+});
 export default LupaPassword;

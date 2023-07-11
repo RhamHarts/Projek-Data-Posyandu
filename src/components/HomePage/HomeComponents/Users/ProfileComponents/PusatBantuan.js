@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { useNavigation } from "@react-navigation/native";
 
@@ -48,21 +48,8 @@ export default function PusatBantuan() {
   };
 
   return (
-    <View style={{ flex: 1, height: "100%" }}>
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 10,
-          padding: 20,
-          backgroundColor: "#03a9f4",
-          alignSelf: "stretch",
-          borderBottomWidth: 1,
-          borderBottomColor: "black",
-          flexDirection: "row",
-          width: "100%",
-        }}
-      >
+    <View style={styles.container}>
+      <View style={styles.title}>
         <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
           <Icon
             name="arrow-left"
@@ -71,31 +58,14 @@ export default function PusatBantuan() {
             style={{ marginLeft: -115 }}
           />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#fff",
-          }}
-        >
-          Pusat Bantuan
-        </Text>
+        <Text style={styles.titleText}>Pusat Bantuan</Text>
       </View>
       <TouchableOpacity onPress={() => handlePress("1")}>
-        <View
-          style={{
-            borderColor: "grey",
-            borderWidth: 0.5,
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 10,
-          }}
-        >
+        <View style={styles.contentContainer}>
           <View>
-            <Text style={{ left: 10 }}>Laporkan bug atau masalah</Text>
+            <Text style={styles.contentText}>Laporkan bug atau masalah</Text>
           </View>
-          <View style={{ flex: 1, alignItems: "flex-end" }}>
+          <View style={styles.contentContainer2}>
             {expandedMenu === "1" ? (
               <Icon name="arrow-down-drop-circle" size={30} color="black" />
             ) : (
@@ -108,19 +78,11 @@ export default function PusatBantuan() {
       {renderExpandedContent("1")}
 
       <TouchableOpacity onPress={() => handlePress("2")}>
-        <View
-          style={{
-            borderColor: "grey",
-            borderWidth: 0.5,
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 10,
-          }}
-        >
+        <View style={styles.contentContainer}>
           <View>
-            <Text style={{ left: 10 }}>Bagaimana cara input data</Text>
+            <Text style={styles.contentText}>Bagaimana cara input data</Text>
           </View>
-          <View style={{ flex: 1, alignItems: "flex-end" }}>
+          <View style={styles.contentContainer2}>
             {expandedMenu === "2" ? (
               <Icon name="arrow-down-drop-circle" size={30} color="black" />
             ) : (
@@ -133,21 +95,13 @@ export default function PusatBantuan() {
       {renderExpandedContent("2")}
 
       <TouchableOpacity onPress={() => handlePress("3")}>
-        <View
-          style={{
-            borderColor: "grey",
-            borderWidth: 0.5,
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 10,
-          }}
-        >
+        <View style={styles.contentContainer}>
           <View>
-            <Text style={{ left: 10 }}>
+            <Text style={styles.contentText}>
               Bagaimana cara membuat akun untuk aplikasi ini
             </Text>
           </View>
-          <View style={{ flex: 1, alignItems: "flex-end" }}>
+          <View style={styles.contentContainer2}>
             {expandedMenu === "3" ? (
               <Icon name="arrow-down-drop-circle" size={30} color="black" />
             ) : (
@@ -160,19 +114,11 @@ export default function PusatBantuan() {
       {renderExpandedContent("3")}
 
       <TouchableOpacity onPress={() => handlePress("4")}>
-        <View
-          style={{
-            borderColor: "grey",
-            borderWidth: 0.5,
-            flexDirection: "row",
-            alignItems: "center",
-            padding: 10,
-          }}
-        >
+        <View style={styles.contentContainer}>
           <View>
-            <Text style={{ left: 10 }}>Pertanyaan lebih lanjut :</Text>
+            <Text style={styles.contentText}>Pertanyaan lebih lanjut :</Text>
           </View>
-          <View style={{ flex: 1, alignItems: "flex-end" }}>
+          <View style={styles.contentContainer2}>
             {expandedMenu === "4" ? (
               <Icon name="arrow-down-drop-circle" size={30} color="black" />
             ) : (
@@ -186,3 +132,34 @@ export default function PusatBantuan() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: { flex: 1, height: "100%" },
+  title: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+    padding: 20,
+    backgroundColor: "#03a9f4",
+    alignSelf: "stretch",
+    borderBottomWidth: 1,
+    borderBottomColor: "black",
+    flexDirection: "row",
+    width: "100%",
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff",
+  },
+  contentContainer: {
+    borderColor: "grey",
+    borderWidth: 0.5,
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 10,
+  },
+  contentText: { left: 10 },
+  contentContainer2: { flex: 1, alignItems: "flex-end" },
+});

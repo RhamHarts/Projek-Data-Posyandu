@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   Alert,
+  StyleSheet,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
@@ -93,10 +94,8 @@ const SignIn = () => {
   }, [email]);
 
   return (
-    <View style={{ flex: 1, backgroundColor: "#f7f6fd" }}>
-      <View
-        style={{ justifyContent: "center", alignItems: "center", top: 100 }}
-      >
+    <View style={styles.container}>
+      <View style={styles.imageTitle}>
         <Image
           source={require("../../images/3.png")}
           style={{
@@ -111,46 +110,14 @@ const SignIn = () => {
         value={email}
         keyboardType="email-address"
         onChangeText={(text) => setEmail(text)}
-        style={{
-          marginHorizontal: 20,
-          backgroundColor: "#FFFFFF",
-          marginTop: 20,
-          borderRadius: 9,
-          elevation: 2,
-          paddingLeft: 10,
-          color: "grey",
-          padding: 15,
-          borderColor: "grey",
-        }}
+        style={styles.textEmailInputBox}
         placeholder="Masukkan Email Anda"
       />
-      <View
-        style={{
-          flexDirection: "row",
-          alignItems: "center",
-          marginHorizontal: 20,
-          backgroundColor: "#FFFFFF",
-          marginTop: 10,
-          borderRadius: 9,
-          elevation: 2,
-          paddingLeft: 10,
-          paddingRight: 5,
-          borderColor: "grey",
-        }}
-      >
+      <View style={styles.textPasswordInputBox}>
         <TextInput
           value={password}
           onChangeText={(text) => setPassword(text)}
-          style={{
-            flex: 1,
-            backgroundColor: "#FFFFFF",
-            marginTop: 10,
-            borderRadius: 9,
-            paddingLeft: 0,
-            color: "grey",
-            padding: 15,
-            borderColor: "grey",
-          }}
+          style={styles.textPasswordInputBox2}
           placeholder="Masukkan Password Anda"
           secureTextEntry={!showPassword}
         />
@@ -175,22 +142,8 @@ const SignIn = () => {
         </Text>
       </TouchableOpacity>
 
-      <TouchableOpacity
-        style={{
-          marginTop: 40,
-          backgroundColor: "#03a9f4",
-          paddingVertical: 15,
-          marginHorizontal: 20,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: 9,
-          elevation: 2,
-        }}
-        onPress={handleLogin}
-      >
-        <Text style={{ color: "#FFFFFF", fontSize: 18, fontWeight: "bold" }}>
-          Masuk
-        </Text>
+      <TouchableOpacity style={styles.button} onPress={handleLogin}>
+        <Text style={styles.buttonText}>Masuk</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -205,4 +158,52 @@ const SignIn = () => {
   );
 };
 
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: "#f7f6fd" },
+  imageTitle: { justifyContent: "center", alignItems: "center", top: 100 },
+  textEmailInputBox: {
+    marginHorizontal: 20,
+    backgroundColor: "#FFFFFF",
+    marginTop: 20,
+    borderRadius: 9,
+    elevation: 2,
+    paddingLeft: 10,
+    color: "grey",
+    padding: 15,
+    borderColor: "grey",
+  },
+  textPasswordInputBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginHorizontal: 20,
+    backgroundColor: "#FFFFFF",
+    marginTop: 10,
+    borderRadius: 9,
+    elevation: 2,
+    paddingLeft: 10,
+    paddingRight: 5,
+    borderColor: "grey",
+  },
+  textPasswordInputBox2: {
+    flex: 1,
+    backgroundColor: "#FFFFFF",
+    marginTop: 10,
+    borderRadius: 9,
+    paddingLeft: 0,
+    color: "grey",
+    padding: 15,
+    borderColor: "grey",
+  },
+  button: {
+    marginTop: 40,
+    backgroundColor: "#03a9f4",
+    paddingVertical: 15,
+    marginHorizontal: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 9,
+    elevation: 2,
+  },
+  buttonText: { color: "#FFFFFF", fontSize: 18, fontWeight: "bold" },
+});
 export default SignIn;

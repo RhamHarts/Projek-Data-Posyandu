@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Text, View, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { useNavigation } from "@react-navigation/native";
 import { firestore, auth } from "../../../../ConfigFirebase/firebase";
@@ -61,21 +61,7 @@ export default function DataKaderUser() {
 
   return (
     <View>
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 10,
-          padding: 10,
-          backgroundColor: "#03a9f4",
-          alignSelf: "stretch",
-          borderBottomWidth: 1,
-          borderBottomColor: "black",
-          zIndex: 1,
-          marginBottom: 20,
-          flexDirection: "row",
-        }}
-      >
+      <View style={styles.title}>
         <TouchableOpacity onPress={() => navigation.navigate("TabHome")}>
           <Icon
             name="arrow-left"
@@ -84,34 +70,12 @@ export default function DataKaderUser() {
             style={{ marginLeft: -135 }}
           />
         </TouchableOpacity>
-        <Text
-          style={{
-            fontSize: 20,
-            fontWeight: "bold",
-            textAlign: "center",
-            color: "#fff",
-          }}
-        >
-          Data Kader
-        </Text>
+        <Text style={styles.titleText}>Data Kader</Text>
       </View>
 
       {filteredData.length > 0 ? (
         filteredData.map((kader, index) => (
-          <View
-            key={index}
-            style={{
-              flexDirection: "row",
-              width: "100%",
-              height: 100,
-              alignItems: "center",
-              marginVertical: 15,
-              backgroundColor: "#FFFFFF",
-              borderRadius: 10,
-              elevation: 6,
-              bottom: 40,
-            }}
-          >
+          <View key={index} style={styles.dataContainer}>
             <View style={{ margin: 10, padding: 10, marginRight: 10 }}>
               <Icon name="user-circle" size={50} color="#000000" />
             </View>
@@ -137,3 +101,36 @@ export default function DataKaderUser() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  title: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
+    padding: 10,
+    backgroundColor: "#03a9f4",
+    alignSelf: "stretch",
+    borderBottomWidth: 1,
+    borderBottomColor: "black",
+    zIndex: 1,
+    marginBottom: 20,
+    flexDirection: "row",
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff",
+  },
+  dataContainer: {
+    flexDirection: "row",
+    width: "100%",
+    height: 100,
+    alignItems: "center",
+    marginVertical: 15,
+    backgroundColor: "#FFFFFF",
+    borderRadius: 10,
+    elevation: 6,
+    bottom: 40,
+  },
+});

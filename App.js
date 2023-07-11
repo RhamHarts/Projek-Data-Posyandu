@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { initializeApp } from "firebase/app";
 import "firebase/auth";
-import { getFCMRegistrationTokenAsync } from "./src/components/HomePage/HomeComponents/Users/getFCMRegistrationTokenAsync";
+// import * as Device from "expo-device";
+// import * as Notification from "expo-notifications";
 
-//Login Page`
+//Login Page
 import LoginLanding from "./src/components/LoginPage/LoginLanding";
 import SignIn from "./src/components/LoginPage/SignIn";
 import Register from "./src/components/LoginPage/Register";
@@ -19,13 +20,14 @@ import TabHomeAdmin from "./src/components/HomePage/HomeComponents/Admin/TabHome
 import EPPGBM_Admin from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin";
 import EPPGBM_Admin1 from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin1";
 import EPPGBM_Admin_Detail from "./src/components/HomePage/HomeComponents/Admin/EPPGBM_Admin_Detail";
-import TableForm from "./src/components/HomePage/HomeComponents/Admin/TableForm";
+
 //Users
 import TabHome from "./src/components/HomePage/HomeComponents/Users/TabHome";
 import TumbuhKembangAnak from "./src/components/HomePage/HomeComponents/Users/HomeComponent/TumbuhKembangAnak";
 import DataKaderUsers from "./src/components/HomePage/HomeComponents/Users/HomeComponent/DataKaderUsers";
 import KebutuhanAnak from "./src/components/HomePage/HomeComponents/Users/HomeComponent/KebutuhanAnak";
 import DeteksiStunting from "./src/components/HomePage/HomeComponents/Users/HomeComponent/DeteksiStunting";
+import HasilDeteksiStunting from "./src/components/HomePage/HomeComponents/Users/HomeComponent/HasilDeteksiStunting";
 import EPPGBM_Users from "./src/components/HomePage/HomeComponents/Users/HomeComponent/EPPGBM_Users";
 
 import KebutuhanAnak1 from "./src/components/HomePage/HomeComponents/Users/HomeComponent/Kebutuhananak/KebutuhanAnak1";
@@ -60,17 +62,42 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const Stack = createNativeStackNavigator();
 
+// Notifications.setNotificationHandler({
+//   handleNotification: async () => ({
+//     shouldShowAlert: true,
+//     shouldPlaySound: false,
+//     shouldSetBadge: false,
+//   }),
+// });
+
 const App = () => {
-  useEffect(() => {
-    getFCMRegistrationTokenAsync()
-      .then((token) => {
-        console.log("FCM registration token:", token);
-        // Lakukan sesuatu dengan token, misalnya kirim ke server
-      })
-      .catch((error) => {
-        console.log("Failed to get FCM registration token:", error);
-      });
-  }, []);
+  // const [expoPushToken, setExpoPushToken] = useState("");
+  // const [notification, setNotification] = useState(false);
+  // const notificationListener = useRef();
+  // const responseListener = useRef();
+
+  // useEffect(() => {
+  //   registerForPushNotificationsAsync().then((token) =>
+  //     setExpoPushToken(token)
+  //   );
+
+  //   notificationListener.current =
+  //     Notifications.addNotificationReceivedListener((notification) => {
+  //       setNotification(notification);
+  //     });
+
+  //   responseListener.current =
+  //     Notifications.addNotificationResponseReceivedListener((response) => {
+  //       console.log(response);
+  //     });
+
+  //   return () => {
+  //     Notifications.removeNotificationSubscription(
+  //       notificationListener.current
+  //     );
+  //     Notifications.removeNotificationSubscription(responseListener.current);
+  //   };
+  // }, []);
 
   return (
     <NavigationContainer>
@@ -89,6 +116,10 @@ const App = () => {
         <Stack.Screen name="DataKaderUsers" component={DataKaderUsers} />
         <Stack.Screen name="KebutuhanAnak" component={KebutuhanAnak} />
         <Stack.Screen name="DeteksiStunting" component={DeteksiStunting} />
+        <Stack.Screen
+          name="HasilDeteksiStunting"
+          component={HasilDeteksiStunting}
+        />
         <Stack.Screen name="EPPGBM_Admin" component={EPPGBM_Admin} />
         <Stack.Screen name="EPPGBM_Admin1" component={EPPGBM_Admin1} />
         <Stack.Screen
@@ -96,7 +127,6 @@ const App = () => {
           component={EPPGBM_Admin_Detail}
         />
         <Stack.Screen name="EPPGBM_Users" component={EPPGBM_Users} />
-        <Stack.Screen name="TableForm" component={TableForm} />
         <Stack.Screen name="InformasiAkun" component={InformasiAkun} />
         <Stack.Screen name="UbahPassword" component={UbahPassword} />
         <Stack.Screen name="PusatBantuan" component={PusatBantuan} />
