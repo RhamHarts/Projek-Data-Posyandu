@@ -30,56 +30,12 @@ const DeteksiStunting = () => {
       return;
     }
 
-    const hasilDeteksi = deteksiStunting();
-
     navigation.navigate("HasilDeteksiStunting", {
-      hasilDeteksi,
       tinggiBadan,
       beratBadan,
       umur,
       jenisKelamin,
     });
-  };
-
-  const deteksiStunting = () => {
-    // Konversi input menjadi tipe data numerik
-    const age = parseInt(umur);
-    const height = parseInt(tinggiBadan);
-    const weight = parseInt(beratBadan);
-
-    if (age >= 0 && age <= 12 && jenisKelamin === "Laki-Laki") {
-      const medianTB1 = 49.4;
-      const sdTB1 = 3.4;
-      const zScoreTB1 = (height - medianTB1) / sdTB1;
-
-      const medianBB1 = 3.4;
-      const sdBB1 = 0.6;
-      const zScoreBB1 = (weight - medianBB1) / sdBB1;
-
-      if (zScoreTB1 < -1) {
-        Alert.alert("Hasil Deteksi", "Anak Anda mengalami stunting.");
-        Alert.alert(
-          "Hasil Deteksi",
-          "Tinggi anak Anda terlalu rendah secara rata-rata anak pada umumnya."
-        );
-      } else if (zScoreBB1 < -1) {
-        Alert.alert("Hasil Deteksi", "Anak Anda mengalami stunting.");
-        Alert.alert(
-          "Hasil Deteksi",
-          "Berat anak Anda terlalu rendah secara rata-rata anak pada umumnya."
-        );
-      } else if (zScoreBB1 >= -1 && zScoreBB1 <= 1) {
-        Alert.alert("Hasil Deteksi", "Berat Badan Anak Anda Normal.");
-      } else if (zScoreTB1 >= -2 && zScoreTB1 <= 3) {
-        Alert.alert("Hasil Deteksi", "Tinggi Badan Anak Anda Normal.");
-      } else {
-        Alert.alert("Hasil Deteksi", "Anak Anda tidak mengalami stunting.");
-      }
-      // Navigasi ke screen HasilDeteksiStunting
-      navigation.navigate("HasilDeteksiStunting", { hasilDeteksi });
-    }
-    const hasilDeteksi = "Anak Anda mengalami stunting.";
-    return hasilDeteksi;
   };
 
   return (

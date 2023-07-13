@@ -14,275 +14,2815 @@ const HasilDeteksiStunting = () => {
 
   const deteksiStunting = () => {
     const age = parseInt(umur);
-    const height = parseInt(tinggiBadan);
-    const weight = parseInt(beratBadan);
+    const height = parseFloat(tinggiBadan);
+    const weight = parseFloat(beratBadan);
 
-    if (age >= 0 && age <= 12 && jenisKelamin === "Laki-Laki") {
-      const medianTB1 = 49.4;
-      const sdTB1 = 3.4;
-      const zScoreTB1 = (height - medianTB1) / sdTB1;
+    if (age === 0 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 46.1;
+      const medianBB = 2.5;
 
-      const medianBB1 = 3.4;
-      const sdBB1 = 0.6;
-      const zScoreBB1 = (weight - medianBB1) / sdBB1;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus1 =
-        zScoreTB1 >= -2 && zScoreTB1 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus1 =
-        zScoreBB1 >= -1 && zScoreBB1 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan1 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB1}) / ${sdTB1} = ${zScoreTB1.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan1 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB1}) / ${sdBB1} = ${zScoreBB1.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
 
       return {
-        tinggiBadanStatus: tinggiBadanStatus1,
-        beratBadanStatus: beratBadanStatus1,
-        rumusTinggiBadan: rumusTinggiBadan1,
-        rumusBeratBadan: rumusBeratBadan1,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 13 && age <= 24 && jenisKelamin === "Laki-Laki") {
-      const medianTB2 = 82.1;
-      const sdTB2 = 4.6;
-      const zScoreTB2 = (height - medianTB2) / sdTB2;
+    } else if (age === 1 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 50.8;
+      const medianBB = 3.4;
 
-      const medianBB2 = 10.1;
-      const sdBB2 = 1.1;
-      const zScoreBB2 = (weight - medianBB2) / sdBB2;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus2 =
-        zScoreTB2 >= -2 && zScoreTB2 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus2 =
-        zScoreBB2 >= -2 && zScoreBB2 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan2 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB2}) / ${sdTB2} = ${zScoreTB2.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan2 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB2}) / ${sdBB2} = ${zScoreBB2.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
 
       return {
-        tinggiBadanStatus: tinggiBadanStatus2,
-        beratBadanStatus: beratBadanStatus2,
-        rumusTinggiBadan: rumusTinggiBadan2,
-        rumusBeratBadan: rumusBeratBadan2,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 25 && age <= 36 && jenisKelamin === "Laki-Laki") {
-      const medianTB3 = 85;
-      const sdTB3 = 4.9;
-      const zScoreTB3 = (height - medianTB3) / sdTB3;
+    } else if (age === 2 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 54.4;
+      const medianBB = 4.3;
 
-      const medianBB3 = 11.6;
-      const sdBB3 = 1.4;
-      const zScoreBB3 = (weight - medianBB3) / sdBB3;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus3 =
-        zScoreTB3 >= -2 && zScoreTB3 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus3 =
-        zScoreBB3 >= -2 && zScoreBB3 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan3 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB3}) / ${sdTB3} = ${zScoreTB3.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan3 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB3}) / ${sdBB3} = ${zScoreBB3.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
 
       return {
-        tinggiBadanStatus: tinggiBadanStatus3,
-        beratBadanStatus: beratBadanStatus3,
-        rumusTinggiBadan: rumusTinggiBadan3,
-        rumusBeratBadan: rumusBeratBadan3,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 37 && age <= 48 && jenisKelamin === "Laki-Laki") {
-      const medianTB4 = 89.2;
-      const sdTB4 = 5.4;
-      const zScoreTB4 = (height - medianTB4) / sdTB4;
+    } else if (age === 3 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 57.3;
+      const medianBB = 5.0;
 
-      const medianBB4 = 12.9;
-      const sdBB4 = 1.8;
-      const zScoreBB4 = (weight - medianBB4) / sdBB4;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus4 =
-        zScoreTB4 >= -2 && zScoreTB4 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus4 =
-        zScoreBB4 >= -2 && zScoreBB4 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan4 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB4}) / ${sdTB4} = ${zScoreTB4.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan4 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB4}) / ${sdBB4} = ${zScoreBB4.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
 
       return {
-        tinggiBadanStatus: tinggiBadanStatus4,
-        beratBadanStatus: beratBadanStatus4,
-        rumusTinggiBadan: rumusTinggiBadan4,
-        rumusBeratBadan: rumusBeratBadan4,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 49 && age <= 60 && jenisKelamin === "Laki-Laki") {
-      const medianTB5 = 89.2;
-      const sdTB5 = 5.4;
-      const zScoreTB5 = (height - medianTB5) / sdTB5;
+    } else if (age === 4 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 59.7;
+      const medianBB = 5.6;
 
-      const medianBB5 = 12.9;
-      const sdBB5 = 1.8;
-      const zScoreBB5 = (weight - medianBB5) / sdBB5;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus5 =
-        zScoreTB5 >= -2 && zScoreTB5 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus5 =
-        zScoreBB5 >= -2 && zScoreBB5 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan5 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB5}) / ${sdTB5} = ${zScoreTB5.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan5 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB5}) / ${sdBB5} = ${zScoreBB5.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
 
       return {
-        tinggiBadanStatus: tinggiBadanStatus5,
-        beratBadanStatus: beratBadanStatus5,
-        rumusTinggiBadan: rumusTinggiBadan5,
-        rumusBeratBadan: rumusBeratBadan5,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 0 && age <= 12 && jenisKelamin === "Perempuan") {
-      const medianTB6 = 61.4;
-      const sdTB6 = 3.7;
-      const zScoreTB6 = (height - medianTB6) / sdTB6;
+    } else if (age === 5 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 61.7;
+      const medianBB = 6.0;
 
-      const medianBB6 = 5.5;
-      const sdBB6 = 0.9;
-      const zScoreBB6 = (weight - medianBB6) / sdBB6;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus6 =
-        zScoreTB6 >= -2 && zScoreTB6 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus6 =
-        zScoreBB6 >= -2 && zScoreBB6 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan6 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB6}) / ${sdTB6} = ${zScoreTB6.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan6 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB6}) / ${sdBB6} = ${zScoreBB6.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
       return {
-        tinggiBadanStatus: tinggiBadanStatus6,
-        beratBadanStatus: beratBadanStatus6,
-        rumusTinggiBadan: rumusTinggiBadan6,
-        rumusBeratBadan: rumusBeratBadan6,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 13 && age <= 24 && jenisKelamin === "Perempuan") {
-      const medianTB7 = 81.7;
-      const sdTB7 = 4.3;
-      const zScoreTB7 = (height - medianTB7) / sdTB7;
+    } else if (age === 6 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 63.3;
+      const medianBB = 6.4;
 
-      const medianBB7 = 9.1;
-      const sdBB7 = 1.1;
-      const zScoreBB7 = (weight - medianBB7) / sdBB7;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus7 =
-        zScoreTB7 >= -2 && zScoreTB7 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus7 =
-        zScoreBB7 >= -2 && zScoreBB7 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan7 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB7}) / ${sdTB7} = ${zScoreTB7.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan7 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB7}) / ${sdBB7} = ${zScoreBB7.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
       return {
-        tinggiBadanStatus: tinggiBadanStatus7,
-        beratBadanStatus: beratBadanStatus7,
-        rumusTinggiBadan: rumusTinggiBadan7,
-        rumusBeratBadan: rumusBeratBadan7,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 25 && age <= 36 && jenisKelamin === "Perempuan") {
-      const medianTB8 = 90.7;
-      const sdTB8 = 5.2;
-      const zScoreTB8 = (height - medianTB8) / sdTB8;
+    } else if (age === 7 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 64.8;
+      const medianBB = 6.7;
 
-      const medianBB8 = 14.1;
-      const sdBB8 = 1.7;
-      const zScoreBB8 = (weight - medianBB8) / sdBB8;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus8 =
-        zScoreTB8 >= -2 && zScoreTB8 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus8 =
-        zScoreBB8 >= -2 && zScoreBB8 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan8 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB8}) / ${sdTB8} = ${zScoreTB8.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan8 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB8}) / ${sdBB8} = ${zScoreBB8.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
       return {
-        tinggiBadanStatus: tinggiBadanStatus8,
-        beratBadanStatus: beratBadanStatus8,
-        rumusTinggiBadan: rumusTinggiBadan8,
-        rumusBeratBadan: rumusBeratBadan8,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 37 && age <= 48 && jenisKelamin === "Perempuan") {
-      const medianTB9 = 95.5;
-      const sdTB9 = 5.1;
-      const zScoreTB9 = (height - medianTB9) / sdTB9;
+    } else if (age === 8 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 66.2;
+      const medianBB = 6.9;
 
-      const medianBB9 = 15.3;
-      const sdBB9 = 2.1;
-      const zScoreBB9 = (weight - medianBB9) / sdBB9;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus9 =
-        zScoreTB9 >= -2 && zScoreTB9 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus9 =
-        zScoreBB9 >= -2 && zScoreBB9 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan9 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB9}) / ${sdTB9} = ${zScoreTB9.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan9 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB9}) / ${sdBB9} = ${zScoreBB9.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
       return {
-        tinggiBadanStatus: tinggiBadanStatus9,
-        beratBadanStatus: beratBadanStatus9,
-        rumusTinggiBadan: rumusTinggiBadan9,
-        rumusBeratBadan: rumusBeratBadan9,
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
-    } else if (age >= 49 && age <= 60 && jenisKelamin === "Perempuan") {
-      const medianTB10 = 102.8;
-      const sdTB10 = 5.7;
-      const zScoreTB10 = (height - medianTB10) / sdTB10;
+    } else if (age === 9 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 67.5;
+      const medianBB = 7.1;
 
-      const medianBB10 = 17.2;
-      const sdBB10 = 2.4;
-      const zScoreBB10 = (weight - medianBB10) / sdBB10;
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
 
-      const tinggiBadanStatus10 =
-        zScoreTB10 >= -2 && zScoreTB10 <= 3 ? "Normal" : "Tidak Normal";
-      const beratBadanStatus10 =
-        zScoreBB10 >= -2 && zScoreBB10 <= 1 ? "Normal" : "Tidak Normal";
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
 
-      const rumusTinggiBadan10 = `(Tinggi Badan - Median) / Standar Deviasi = (${height} - ${medianTB10}) / ${sdTB10} = ${zScoreTB10.toFixed(
-        2
-      )}`;
-      const rumusBeratBadan10 = `(Berat Badan - Median) / Standar Deviasi = (${weight} - ${medianBB10}) / ${sdBB10} = ${zScoreBB10.toFixed(
-        2
-      )}`;
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
       return {
-        tinggiBadanStatus: tinggiBadanStatus10,
-        beratBadanStatus: beratBadanStatus10,
-        rumusTinggiBadan: rumusTinggiBadan10,
-        rumusBeratBadan: rumusBeratBadan10,
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 10 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 68.7;
+      const medianBB = 7.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 11 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 69.9;
+      const medianBB = 7.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 12 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 71.0;
+      const medianBB = 7.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 13 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 72.1;
+      const medianBB = 7.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 14 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 73.1;
+      const medianBB = 8.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 15 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 74.1;
+      const medianBB = 8.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 16 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 75.0;
+      const medianBB = 8.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 17 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 76.0;
+      const medianBB = 8.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 18 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 76.9;
+      const medianBB = 8.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 19 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 77.7;
+      const medianBB = 8.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 20 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 78.6;
+      const medianBB = 9.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 21 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 79.4;
+      const medianBB = 9.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 22 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 80.2;
+      const medianBB = 9.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 23 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 81.0;
+      const medianBB = 9.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 24 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 81.0;
+      const medianBB = 9.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 25 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 81.7;
+      const medianBB = 9.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 26 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 82.5;
+      const medianBB = 10.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 27 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 83.1;
+      const medianBB = 10.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 28 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 83.8;
+      const medianBB = 10.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 29 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 84.5;
+      const medianBB = 10.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 30 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 85.1;
+      const medianBB = 10.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 31 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 85.7;
+      const medianBB = 10.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 32 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 86.4;
+      const medianBB = 10.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 33 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 86.9;
+      const medianBB = 10.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 34 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 87.5;
+      const medianBB = 11.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 35 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 88.1;
+      const medianBB = 11.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 36 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 88.7;
+      const medianBB = 11.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 37 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 89.2;
+      const medianBB = 11.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 38 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 89.8;
+      const medianBB = 11.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 39 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 90.3;
+      const medianBB = 11.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 40 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 90.9;
+      const medianBB = 11.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 41 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 91.4;
+      const medianBB = 11.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 42 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 91.9;
+      const medianBB = 12.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 43 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 92.4;
+      const medianBB = 12.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 44 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 93.0;
+      const medianBB = 12.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 45 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 93.5;
+      const medianBB = 12.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 46 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 94.0;
+      const medianBB = 12.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 47 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 94.4;
+      const medianBB = 12.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 48 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 94.9;
+      const medianBB = 12.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 49 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 95.4;
+      const medianBB = 12.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 50 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 95.9;
+      const medianBB = 12.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 51 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 96.4;
+      const medianBB = 13.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 52 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 96.9;
+      const medianBB = 13.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 53 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 97;
+      const medianBB = 13.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 54 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 97.8;
+      const medianBB = 13.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 55 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 98.3;
+      const medianBB = 13.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 56 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 98.8;
+      const medianBB = 13.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 57 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 99.3;
+      const medianBB = 13.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 58 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 99.7;
+      const medianBB = 13.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 59 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 100.2;
+      const medianBB = 14.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 60 && jenisKelamin === "Laki-Laki") {
+      const medianTB = 100.7;
+      const medianBB = 14.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 0 && jenisKelamin === "Perempuan") {
+      const medianTB = 45.4;
+      const medianBB = 2.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 1 && jenisKelamin === "Perempuan") {
+      const medianTB = 49.8;
+      const medianBB = 3.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 2 && jenisKelamin === "Perempuan") {
+      const medianTB = 53.0;
+      const medianBB = 3.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatu = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 3 && jenisKelamin === "Perempuan") {
+      const medianTB = 55.6;
+      const medianBB = 4.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 4 && jenisKelamin === "Perempuan") {
+      const medianTB = 57.8;
+      const medianBB = 5.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 5 && jenisKelamin === "Perempuan") {
+      const medianTB = 59.6;
+      const medianBB = 5.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 6 && jenisKelamin === "Perempuan") {
+      const medianTB = 61.2;
+      const medianBB = 5.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 7 && jenisKelamin === "Perempuan") {
+      const medianTB = 62.7;
+      const medianBB = 6.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 8 && jenisKelamin === "Perempuan") {
+      const medianTB = 64.0;
+      const medianBB = 6.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 9 && jenisKelamin === "Perempuan") {
+      const medianTB = 65.3;
+      const medianBB = 6.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 10 && jenisKelamin === "Perempuan") {
+      const medianTB = 66.5;
+      const medianBB = 6.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 11 && jenisKelamin === "Perempuan") {
+      const medianTB = 67.7;
+      const medianBB = 6.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 12 && jenisKelamin === "Perempuan") {
+      const medianTB = 68.9;
+      const medianBB = 7.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 13 && jenisKelamin === "Perempuan") {
+      const medianTB = 70.0;
+      const medianBB = 7.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 14 && jenisKelamin === "Perempuan") {
+      const medianTB = 71.0;
+      const medianBB = 7.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 15 && jenisKelamin === "Perempuan") {
+      const medianTB = 72.0;
+      const medianBB = 7.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 16 && jenisKelamin === "Perempuan") {
+      const medianTB = 73.0;
+      const medianBB = 7.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 17 && jenisKelamin === "Perempuan") {
+      const medianTB = 74.0;
+      const medianBB = 7.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 18 && jenisKelamin === "Perempuan") {
+      const medianTB = 74.9;
+      const medianBB = 8.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 19 && jenisKelamin === "Perempuan") {
+      const medianTB = 75.8;
+      const medianBB = 8.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 20 && jenisKelamin === "Perempuan") {
+      const medianTB = 76.7;
+      const medianBB = 8.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 21 && jenisKelamin === "Perempuan") {
+      const medianTB = 77.5;
+      const medianBB = 8.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 22 && jenisKelamin === "Perempuan") {
+      const medianTB = 78.4;
+      const medianBB = 8.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 23 && jenisKelamin === "Perempuan") {
+      const medianTB = 79.2;
+      const medianBB = 8.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 24 && jenisKelamin === "Perempuan") {
+      const medianTB = 79.3;
+      const medianBB = 9.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 25 && jenisKelamin === "Perempuan") {
+      const medianTB = 80.0;
+      const medianBB = 9.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 26 && jenisKelamin === "Perempuan") {
+      const medianTB = 80.8;
+      const medianBB = 9.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 27 && jenisKelamin === "Perempuan") {
+      const medianTB = 81.5;
+      const medianBB = 9.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 28 && jenisKelamin === "Perempuan") {
+      const medianTB = 82.2;
+      const medianBB = 9.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 29 && jenisKelamin === "Perempuan") {
+      const medianTB = 82.9;
+      const medianBB = 9.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 30 && jenisKelamin === "Perempuan") {
+      const medianTB = 83.6;
+      const medianBB = 10.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 31 && jenisKelamin === "Perempuan") {
+      const medianTB = 84.3;
+      const medianBB = 10.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 32 && jenisKelamin === "Perempuan") {
+      const medianTB = 84.9;
+      const medianBB = 10.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 33 && jenisKelamin === "Perempuan") {
+      const medianTB = 85.6;
+      const medianBB = 10.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 34 && jenisKelamin === "Perempuan") {
+      const medianTB = 86.2;
+      const medianBB = 10.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 35 && jenisKelamin === "Perempuan") {
+      const medianTB = 86.8;
+      const medianBB = 10.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 36 && jenisKelamin === "Perempuan") {
+      const medianTB = 87.4;
+      const medianBB = 10.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 37 && jenisKelamin === "Perempuan") {
+      const medianTB = 88.0;
+      const medianBB = 10.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 38 && jenisKelamin === "Perempuan") {
+      const medianTB = 88.6;
+      const medianBB = 11.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 39 && jenisKelamin === "Perempuan") {
+      const medianTB = 89.2;
+      const medianBB = 11.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 40 && jenisKelamin === "Perempuan") {
+      const medianTB = 89.8;
+      const medianBB = 11.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 41 && jenisKelamin === "Perempuan") {
+      const medianTB = 90.4;
+      const medianBB = 11.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 42 && jenisKelamin === "Perempuan") {
+      const medianTB = 90.9;
+      const medianBB = 11.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 43 && jenisKelamin === "Perempuan") {
+      const medianTB = 91.5;
+      const medianBB = 11.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 44 && jenisKelamin === "Perempuan") {
+      const medianTB = 92.0;
+      const medianBB = 11.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 45 && jenisKelamin === "Perempuan") {
+      const medianTB = 92.5;
+      const medianBB = 12.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 46 && jenisKelamin === "Perempuan") {
+      const medianTB = 93.1;
+      const medianBB = 12.1;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 47 && jenisKelamin === "Perempuan") {
+      const medianTB = 93.6;
+      const medianBB = 12.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 48 && jenisKelamin === "Perempuan") {
+      const medianTB = 94.1;
+      const medianBB = 12.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 49 && jenisKelamin === "Perempuan") {
+      const medianTB = 94.6;
+      const medianBB = 12.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 50 && jenisKelamin === "Perempuan") {
+      const medianTB = 95.1;
+      const medianBB = 12.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 51 && jenisKelamin === "Perempuan") {
+      const medianTB = 95.6;
+      const medianBB = 12.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 52 && jenisKelamin === "Perempuan") {
+      const medianTB = 96.1;
+      const medianBB = 12.8;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 53 && jenisKelamin === "Perempuan") {
+      const medianTB = 96.6;
+      const medianBB = 12.9;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 54 && jenisKelamin === "Perempuan") {
+      const medianTB = 97.1;
+      const medianBB = 13.0;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 55 && jenisKelamin === "Perempuan") {
+      const medianTB = 97.6;
+      const medianBB = 13.2;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 56 && jenisKelamin === "Perempuan") {
+      const medianTB = 98.1;
+      const medianBB = 13.3;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 57 && jenisKelamin === "Perempuan") {
+      const medianTB = 98.5;
+      const medianBB = 13.4;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 58 && jenisKelamin === "Perempuan") {
+      const medianTB = 99.0;
+      const medianBB = 13.5;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 59 && jenisKelamin === "Perempuan") {
+      const medianTB = 99.5;
+      const medianBB = 13.6;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
+      };
+    } else if (age === 60 && jenisKelamin === "Perempuan") {
+      const medianTB = 99.9;
+      const medianBB = 13.7;
+
+      let tinggiBadanStatus = null;
+      let beratBadanStatus = null;
+
+      if (height < medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Stunting";
+      } else if (height >= medianTB) {
+        tinggiBadanStatus = "Tinggi Badan Normal";
+      }
+
+      if (weight < medianBB) {
+        beratBadanStatus = "Berat Badan Stunting";
+      } else if (weight >= medianBB) {
+        beratBadanStatus = "Berat Badan Normal";
+      }
+
+      return {
+        tinggiBadanStatus,
+        beratBadanStatus,
       };
     }
+
     return null;
   };
 
@@ -301,17 +2841,10 @@ const HasilDeteksiStunting = () => {
         <Text style={styles.titleText}>Hasil Deteksi Stunting</Text>
       </View>
       <View style={styles.resultContainer}>
-        <Text style={styles.resultTextTitle}>Hasil Kalkulator Nilai Gizi</Text>
         <Text style={styles.resultText}>Umur: {umur} Bulan</Text>
         <Text style={styles.resultText}>Jenis Kelamin: {jenisKelamin}</Text>
         <Text style={styles.resultText}>Tinggi Badan: {tinggiBadan}cm</Text>
         <Text style={styles.resultText}>Berat Badan: {beratBadan}kg</Text>
-        <Text style={styles.resultText}>
-          Rumus Tinggi Badan: {hasilDeteksi?.rumusTinggiBadan || "-"}
-        </Text>
-        <Text style={styles.resultText}>
-          Rumus Berat Badan: {hasilDeteksi?.rumusBeratBadan || "-"}
-        </Text>
         <Text style={styles.resultText}>
           Status Tinggi Badan: {hasilDeteksi?.tinggiBadanStatus || "-"}
         </Text>
@@ -335,7 +2868,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0.5,
     borderBottomColor: "black",
     zIndex: 1,
-    marginBottom: 10,
+    marginBottom: 30,
     flexDirection: "row",
   },
   titleText: {
@@ -347,13 +2880,7 @@ const styles = StyleSheet.create({
   },
   resultContainer: {
     flex: 1,
-    marginHorizontal: 20,
-  },
-  resultTextTitle: {
-    fontSize: 17,
-    marginBottom: 15,
-    textAlign: "center",
-    fontWeight: "bold",
+    marginHorizontal: 25,
   },
   resultText: {
     fontSize: 15,
