@@ -172,7 +172,7 @@ const EPPGBM_Admin1 = () => {
               style={{ marginLeft: -147 }}
             />
           </TouchableOpacity>
-          <Text style={styles.textTitle}>EPPGBM</Text>
+          <Text style={styles.textTitle}>Pendataan Balita</Text>
         </View>
 
         <View style={styles.inputBox}>
