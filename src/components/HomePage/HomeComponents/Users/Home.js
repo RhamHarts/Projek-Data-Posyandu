@@ -109,7 +109,7 @@ const Home = () => {
               marginTop: 0,
             }}
           />
-          <Text style={{ fontSize: 16, bottom: 10 }}>Deteksi Stunting</Text>
+          <Text style={{ fontSize: 16, bottom: 10 }}>Deteksi Gizi</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.menuItem}
@@ -152,7 +152,7 @@ const Home = () => {
               marginTop: 10,
             }}
           />
-          <Text style={{ fontSize: 16, bottom: 25 }}>E-PPGBM</Text>
+          <Text style={{ fontSize: 16, bottom: 25 }}>Pendataan Balita</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
