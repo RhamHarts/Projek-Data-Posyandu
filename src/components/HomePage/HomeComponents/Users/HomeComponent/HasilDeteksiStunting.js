@@ -2838,7 +2838,7 @@ const HasilDeteksiStunting = () => {
           style={{ marginLeft: -75 }}
           onPress={handleBackButton}
         />
-        <Text style={styles.titleText}>Hasil Deteksi Stunting</Text>
+        <Text style={styles.titleText}>Hasil Deteksi Gizi</Text>
       </View>
       <View style={styles.resultContainer}>
         <Text style={styles.resultText}>Umur: {umur} Bulan</Text>
