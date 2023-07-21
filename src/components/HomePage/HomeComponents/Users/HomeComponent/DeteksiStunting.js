@@ -50,7 +50,7 @@ const DeteksiStunting = () => {
               style={{ marginLeft: -115 }}
             />
           </TouchableOpacity>
-          <Text style={styles.titleText}>Deteksi Stunting</Text>
+          <Text style={styles.titleText}>Deteksi Gizi</Text>
         </View>
 
         <View style={styles.inputBox}>
