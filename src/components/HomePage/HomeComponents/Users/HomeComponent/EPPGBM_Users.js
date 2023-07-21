@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+titimport React, { useState } from "react";
 import {
   View,
   TextInput,
@@ -89,7 +89,7 @@ const EPPGBM_Users = () => {
             style={styles.backButton}
           />
         </TouchableOpacity>
-        <Text style={styles.title}>EPPGBM</Text>
+        <Text style={styles.title}>Pendataan Balita</Text>
       </View>
 
       <Text style={styles.searchTitle}>Cari Nomor KK</Text>
