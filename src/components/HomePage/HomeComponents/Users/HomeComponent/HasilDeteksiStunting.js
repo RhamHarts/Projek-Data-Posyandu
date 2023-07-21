@@ -25,13 +25,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -48,13 +48,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -71,13 +71,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -94,13 +94,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -117,13 +117,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -140,13 +140,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -163,13 +163,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -186,13 +186,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -209,13 +209,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -232,13 +232,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -255,13 +255,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -278,13 +278,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -301,13 +301,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -324,13 +324,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -347,13 +347,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -370,13 +370,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -393,13 +393,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -416,13 +416,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -439,13 +439,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -462,13 +462,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -485,13 +485,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -507,13 +507,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -530,13 +530,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -553,13 +553,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -576,13 +576,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -599,13 +599,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -622,13 +622,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -645,13 +645,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -668,13 +668,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -691,13 +691,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -714,13 +714,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -737,13 +737,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -760,13 +760,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -783,13 +783,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -806,13 +806,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -829,13 +829,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -852,13 +852,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -875,13 +875,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -898,13 +898,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -921,13 +921,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -944,13 +944,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -967,13 +967,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -990,13 +990,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1013,13 +1013,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1036,13 +1036,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1059,13 +1059,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1082,13 +1082,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1105,13 +1105,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1128,13 +1128,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1151,13 +1151,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1174,13 +1174,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1197,13 +1197,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1220,13 +1220,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1243,13 +1243,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1266,13 +1266,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1289,13 +1289,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1312,13 +1312,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1335,13 +1335,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1358,13 +1358,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1381,13 +1381,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1404,13 +1404,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1427,13 +1427,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1450,13 +1450,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1473,13 +1473,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatu = "Berat Badan Stunting";
+        beratBadanStatu = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1496,13 +1496,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1519,13 +1519,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1542,13 +1542,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1565,13 +1565,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1588,13 +1588,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1611,13 +1611,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1634,13 +1634,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1657,13 +1657,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1680,13 +1680,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1703,13 +1703,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1726,13 +1726,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1749,13 +1749,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1772,13 +1772,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1795,13 +1795,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1818,13 +1818,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1841,13 +1841,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1864,13 +1864,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1887,13 +1887,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1909,13 +1909,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1932,13 +1932,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1955,13 +1955,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -1978,13 +1978,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2001,13 +2001,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2024,13 +2024,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2047,13 +2047,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2070,13 +2070,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2093,13 +2093,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2116,13 +2116,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2139,13 +2139,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2162,13 +2162,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2185,13 +2185,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2208,13 +2208,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2231,13 +2231,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2254,13 +2254,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2277,13 +2277,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2300,13 +2300,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2323,13 +2323,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2346,13 +2346,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2369,13 +2369,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2392,13 +2392,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2415,13 +2415,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2438,13 +2438,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2461,13 +2461,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2484,13 +2484,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2507,13 +2507,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2530,13 +2530,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2553,13 +2553,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2576,13 +2576,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2599,13 +2599,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2622,13 +2622,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2645,13 +2645,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2668,13 +2668,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2691,13 +2691,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2714,13 +2714,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2737,13 +2737,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2760,13 +2760,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2783,13 +2783,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
@@ -2806,13 +2806,13 @@ const HasilDeteksiStunting = () => {
       let beratBadanStatus = null;
 
       if (height < medianTB) {
-        tinggiBadanStatus = "Tinggi Badan Stunting";
+        tinggiBadanStatus = "Tinggi Badan Tidak Normal";
       } else if (height >= medianTB) {
         tinggiBadanStatus = "Tinggi Badan Normal";
       }
 
       if (weight < medianBB) {
-        beratBadanStatus = "Berat Badan Stunting";
+        beratBadanStatus = "Berat Badan Tidak Normal";
       } else if (weight >= medianBB) {
         beratBadanStatus = "Berat Badan Normal";
       }
