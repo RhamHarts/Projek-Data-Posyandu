@@ -240,7 +240,7 @@ export default function EPPBGM_Admin() {
             style={{ marginLeft: -147 }}
           />
         </TouchableOpacity>
-        <Text style={styles.textTitle}>EPPGBM</Text>
+        <Text style={styles.textTitle}>Pendataan Balita</Text>
       </View>
 
       <ScrollView>
